@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only"><%= t ".toggle_navigation" %></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>">
+        <img class= "img-responsive" src="http://framgia.co.jp/images/logo_f.png"
+          alt="" class="img-responsive">
+          <p class="logo_f"><%= t ".framgia" %></p>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="navc"><%= link_to t(".home"), root_path %></li>
+        <li class="navc"><%= link_to t(".help"), "/help" %></li>
+        <li class="navc"><%= link_to t(".about"), "/about" %></li>
+        <li class="navc"><%= link_to t(".contact"), "/contact" %></li>
+        <li class="navc"><%= link_to t(".login"), "#" %></li>
+        <li class="navc"><%= link_to t(".signup"), "#" %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
