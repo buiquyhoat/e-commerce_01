@@ -6,3 +6,33 @@ en:
     create:
       welcome_to_the_Fshop: "Welcome to the Fshop!"
   ecomerces: "Ecommerces"
+  hello: "Hello world"
+  ecomerces: "E-Commerces"
+  layouts:
+    header:
+      framgia: "F-Shop"
+      home: "Home"
+      help: "Help"
+      about: "About"
+      contact: "Contact"
+      login: "Login"
+      signup: "Sign up"
+    footer:
+      f_shop: "F-Shop"
+      author: "Bui Quy Hoat & Tran Van Tuan"
+  static_pages:
+    contact:
+      mail_us: "Mail us"
+      address: "Address"
+      phone: "Phone"
+      email: "Email"
+      e_mail: "E-mail : "
+      detail_email: "f-shop@gmail.com"
+      detail_phone: "+84 1994 1994"
+      detail_address: "25T2 - Hoang Dao Thuy Stress, Ha Noi City"
+    home:
+      home: "Home"
+    help:
+      help: "Help"
+    about:
+      about: "About"

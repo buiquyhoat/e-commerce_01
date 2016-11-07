@@ -24,4 +24,139 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+nav.navbar.navbar-default {
+  background: white;
+  margin-bottom: 0;
+}
+.navbar-brand>img {
+  margin-top: -4px;
+  width: 50%;
+}
+.icon i {
+  font-size: 20px;
+  padding-right: 12px;
+}
+ul.nav.navbar-nav.navbar-right li.navc {
+  border-top: 5px solid transparent;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0px 25px;
+}
+ul.nav.navbar-nav.navbar-right li.navc:hover {
+  border-color: $blue_navbar;
+  color: $blue_navbar;
+}
+.icon {
+  float: left;
+  padding-top: 40px;
+}
+p.logo_f {
+  color: $orange_logo;
+  font-size: 33px;
+  font-weight: 700;
+  position: relative;
+  text-shadow: 3px 1px 0.5px $orange_shadow;
+  top: -48px;
+  left: 88px;
+}
+h2.tittle {
+  text-align: center;
+  font-size: 3em;
+  color: $violet_title;
+}
+.mail-w3ls {
+  padding: 5em 0;
+}
+.mail-grid i {
+  font-size: 1.5em;
+  border-radius: 60px;
+  border: 2px solid $yellow_mail_border;
+  padding: 1em;
+  color: $gray_mail_border;
+  background: $yellow_mail_border;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -o-transition: .5s all;
+  -ms-transition: .5s all;
+}
+.mail-grid i:hover {
+  background: $orange_logo;
+}
+.mail-grids {
+  margin-top: 4em;
+}
+.mail-grid h5 {
+  font-size: 1.8em;
+  color: $violet_title;
+  margin-top: .5em;
+}
+.mail-grid p {
+  font-size: 1em;
+  color: $gray_mail_p;
+  margin-top:.5em;
+}
+.mail-top {
+  text-align: center;
+}
+.map-w3 iframe {
+  width: 100%;
+  height: 350px;
+  border: 7px double $yellow_mail_border;
+}
+.map-w3 {
+  margin: 4em 0;
+}
+.mail-bottom h4 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+  color: $violet_title;
+}
+.mail-bottom input[type="text"], .mail-bottom input[type="email"] {
+  width: 32.9%;
+  float: left;
+}
+.mail-bottom textarea {
+  min-height: 200px;
+  resize: none;
+  width: 100%;
+  margin: 1em 0;
+}
+.mail-bottom input[type="text"], .mail-bottom input[type="email"], .mail-bottom textarea {
+  background: none;
+  border: 1px solid $gray_mail_iframe;
+  color: $gray_mail_input;
+  padding: 13px 10px;
+  font-size: 14px;
+  outline: none;
+}
+.mail-bottom input[type="email"] {
+  margin: 0 6px;
+}
+.mail-bottom input[type="submit"], .mail-bottom input[type="reset"] {
+  outline: none;
+  color: $gray_mail_p;
+  font-size: 1em;
+  padding: 13px 0;
+  width: 12%;
+  background: $yellow_mail_border;
+  border: none;
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -o-transition: .5s all;
+  -ms-transition: .5s all;
+}
+.mail-bottom input[type="submit"]:hover, .mail-bottom input[type="reset"]:hover {
+  background: $violet_title;
+}
+footer.footer {
+  margin-top: 25px;
+  border-top: solid 1px $gray_footer;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 12px;
 }
