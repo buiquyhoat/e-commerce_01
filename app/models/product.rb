@@ -9,4 +9,19 @@ class Product < ApplicationRecord
     dependent: :destroy
   has_many :sizes, class_name: Size.name, foreign_key: :product_id,
     dependent: :destroy
+
+  def self.best_seller
+    product_ids = "select order_details.product_id
+      from order_details
+      where (julianday('now') - julianday(order_details.created_at))
+      < #{Settings.product.limit_date}
+      group by order_details.product_id
+      order by sum(order_details.quantity) desc
+      limit #{Settings.product.limit}"
+    Product.where("id IN (#{product_ids})")
+  end
+
+  def self.newest
+    Product.order(created_at: :desc).limit(Settings.product.limit)
+  end
 end
