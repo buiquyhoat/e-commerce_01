@@ -1,1 +1,14 @@
-<%= @user.name %>, <%= @user.email %>
+<table class="table-show-user">
+  <tr>
+    <th><%= t ".name" %></th>
+    <th><%= t ".email" %></th>
+    <th><%= t ".created_at" %></th>
+    <th><%= t ".updated_at" %></th>
+  </tr>
+  <tr>
+    <td><%= @user.name %></td>
+    <td><%= @user.email %></td>
+    <td><%= @user.created_at %></td>
+    <td><%= @user.updated_at %></td>
+  </tr>
+</table>

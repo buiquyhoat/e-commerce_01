@@ -2,19 +2,22 @@
   <%= render "shared/error_messages", object: f.object %>
 
   <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :name, class: "form-control", required: "true",
+    maxlength: Settings.name_size_max %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, class: "form-control" %>
+  <%= f.email_field :email, class: "form-control", required: "true",
+    maxlength: Settings.email_length %>
 
   <%= f.label :phone_number %>
-  <%= f.email_field :phone_number, class: "form-control" %>
+  <%= f.text_field :phone_number, class: "form-control" %>
 
   <%= f.label :address %>
   <%= f.email_field :address, class: "form-control" %>
 
   <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" %>
+  <%= f.password_field :password, class: "form-control",
+    minlength: Settings.password_min %>
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: "form-control" %>

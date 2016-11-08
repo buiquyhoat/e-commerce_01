@@ -5,6 +5,18 @@ en:
       sign_up: "Sign up"
     create:
       welcome_to_the_Fshop: "Welcome to the Fshop!"
+    edit:
+      save_changes: "Save changes"
+      please_log_in: "Please login"
+      update_profile: "Update profile"
+    update:
+      profile_updated: "Profile updated!"
+    show:
+      name: "Name"
+      email: "Email"
+      created_at: "Created at"
+      updated_at: "Updated at"
+      time_now: "Time now"
   sessions:
     new:
       log_in: "Log in"
@@ -25,6 +37,10 @@ en:
       contact: "Contact"
       login: "Login"
       signup: "Sign up"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
     footer:
       f_shop: "F-Shop"
       author: "Bui Quy Hoat & Tran Van Tuan"
