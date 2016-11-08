@@ -1,0 +1,26 @@
+<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+  <div class="sanpham">
+    <div class="thumbnail">
+      <div class="view-detail-product">
+        <i class="fa fa-link"></i>
+        <i class="fa fa-search"></i>
+      </div>
+      <%= image_tag product.image ? product.image.url : Settings.image, class: "img-responsive" %>
+      <div class="caption">
+        <h3 class="category_name text-center"><%= link_to product.category.category_name, "#" %></h3>
+        <h3 class="product_name text-center"><%= product.product_name %></h3>
+        <p class="price text-center">
+          <%= product.price %><%= t ".dola" %>
+        </p>
+        <hr>
+        <p class="description text-center">
+          <%= product.description %>
+        </p>
+        <p>
+          <a href="#" class="btn btn-default"><%= t ".view_more" %></a>
+          <a href="#" class="btn btn-default pull-right"><%= t ".add_to_cart" %></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20161107035838) do
 
   create_table "order_details", force: :cascade do |t|
     t.integer  "quantity"
+    t.integer  "order_id"
+    t.integer  "product_id"
     t.string   "product_uuid"
     t.string   "product_name"
-    t.integer  "product_id"
-    t.integer  "order_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 20161107035838) do
   create_table "products", force: :cascade do |t|
     t.string   "uuid"
     t.string   "product_name"
-    t.text     "description"
+    t.string   "description"
     t.string   "image"
-    t.float    "price"
-    t.float    "rating"
+    t.string   "price"
+    t.string   "rating"
     t.integer  "quantity"
     t.integer  "category_id"
     t.datetime "created_at",   null: false

@@ -44,3 +44,11 @@ en:
       help: "Help"
     about:
       about: "About"
+  products:
+    product:
+      dola: "$"
+    index:
+      new_products: "New Product"
+      view_more: "View more"
+      add_to_cart: "Add to cart"
+      best_seller_products: "Best Seller Product"

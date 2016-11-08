@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "variable";
 input, textarea, select, .uneditable-input {
   border: 1px solid $grey;
@@ -25,7 +27,6 @@ input {
     color: $state-danger-text;
   }
 }
-
 nav.navbar.navbar-default {
   background: white;
   margin-bottom: 0;
@@ -162,7 +163,6 @@ footer.footer {
   padding-bottom: 15px;
   font-size: 12px;
 }
-
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -175,4 +175,83 @@ footer.footer {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+.view-detail-product i {
+  font-size: 16px;
+  padding: 12px;
+  margin-left: 10px;
+  border: solid 1px;
+  border-radius: 50%;
+}
+
+.view-detail-product i:hover {
+  background: $sky-blue;
+  border: solid 1px $sky-blue;
+}
+
+.thumbnail {
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumbnail:hover .view-detail-product {
+  opacity: 1;
+  top: 2px;
+}
+.top2 {
+  padding-top: 74px;
+}
+.view-detail-product {
+  position: absolute;
+  color: white;
+  width: 97%;
+  height: 208px;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding-top: 60px;
+  top: -208px;
+  transition: all ease 0.8s;
+}
+a.btn.btn-default {
+  border: solid 2px $dark-blue;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+a.btn.btn-default:hover {
+  background: $dark-blue;
+  color: white;
+}
+h2.text-center {
+  color: $dark-blue;
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 4px 1px 1px lightblue;
+  margin-bottom: 30px;
+}
+p.description {
+  color: gray;
+  margin-bottom: 22px;
+}
+.category_name a {
+  font-size: 25px;
+  font-weight: 700;
+}
+h3.product_name {
+  font-weight: 700;
+  color: black;
+}
+p.price {
+  color: red;
+  font-size: 25px;
+  font-weight: 700;
+}
+.top2 .sanpham {
+  border: solid 2px $light-blue;
+  box-shadow: 3px 3px 0.5px rgba(128, 128, 128, 0.55);
+}
+h2.best-sl.text-center {
+  margin-top: 8%;
+  margin-bottom: 4%;
 }
