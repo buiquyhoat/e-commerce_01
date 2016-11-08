@@ -19,8 +19,24 @@
         <li class="navc"><%= link_to t(".help"), "/help" %></li>
         <li class="navc"><%= link_to t(".about"), "/about" %></li>
         <li class="navc"><%= link_to t(".contact"), "/contact" %></li>
-        <li class="navc"><%= link_to t(".login"), "#" %></li>
-        <li class="navc"><%= link_to t(".signup"), "#" %></li>
+        <% if logged_in? %>
+          <li class="dropdown navc">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t(".account") %><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".profile"), current_user %></li>
+              <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t(".log_out"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="navc"><%= link_to t(".login"), login_path %></li>
+        <% end %>
+        <li class="navc"><%= link_to t(".signup"), signup_path %></li>
       </ul>
     </div>
   </div>

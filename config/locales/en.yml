@@ -5,6 +5,14 @@ en:
       sign_up: "Sign up"
     create:
       welcome_to_the_Fshop: "Welcome to the Fshop!"
+  sessions:
+    new:
+      log_in: "Log in"
+      new_user: "New user?"
+      sign_up_now: "Sign up now!"
+      remember: "Remember me on this computer"
+    create:
+      invalid_email_password: "Invalid email/password combination!"
   ecomerces: "Ecommerces"
   hello: "Hello world"
   ecomerces: "E-Commerces"
