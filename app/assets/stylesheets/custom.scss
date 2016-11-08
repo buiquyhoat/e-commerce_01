@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "variable"
+@import "variable";
 input, textarea, select, .uneditable-input {
   border: 1px solid $grey;
   width: 100%;
@@ -24,6 +24,8 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
 nav.navbar.navbar-default {
   background: white;
   margin-bottom: 0;
@@ -74,7 +76,7 @@ h2.tittle {
   border-radius: 60px;
   border: 2px solid $yellow_mail_border;
   padding: 1em;
-  color: $gray_mail_border;
+  color: $white_mail_border;
   background: $yellow_mail_border;
   transition: .5s all;
   -webkit-transition: .5s all;
@@ -159,4 +161,18 @@ footer.footer {
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 12px;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
