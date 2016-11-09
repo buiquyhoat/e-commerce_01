@@ -1,0 +1,54 @@
+<div class="detail-product">
+  <div class="col-md-4 zoom-grid">
+    <div class="flexslider">
+      <%= image_tag @product.image ? @product.image.url : Settings.image, class: "img-responsive" %>
+    </div>
+  </div>
+  <div class="col-md-8 dress-info">
+    <div class="dress-name">
+      <h3><%= @product.product_name %></h3>
+      <span><%= @product.price %>$</span>
+      <div class="clearfix"></div>
+      <p><%= @product.description %></p>
+    </div>
+    <div class="span span1">
+      <p class="left"><%= t ".fabric_origin" %></p>
+      <p class="right"><%= t ".vietnam" %></p>
+      <div class="clearfix"></div>
+    </div>
+    <div class="span span2">
+      <p class="left"><%= t ".made_in" %></p>
+      <p class="right"><%= t ".vietnam" %></p>
+      <div class="clearfix"></div>
+    </div>
+    <div class="span span3">
+      <p class="left"><%= t ".color" %></p>
+      <p class="right">
+        <span class="selection-box">
+          <select class="domains valid" name="domains">
+            <%= @colors.each do |color| %>
+              <option value="<%= color.id %>"><%= color.color_name %></option>
+            <% end %>
+          </select>
+        </span>
+      </p>
+      <div class="clearfix"></div>
+    </div>
+    <div class="span span4">
+      <p class="left"><%= t ".size" %></p>
+      <p class="right">
+        <span class="selection-box">
+          <select class="domains valid" name="domains">
+            <%= @sizes.each do |size| %>
+              <option value="<%= size.id %>"><%= size.size_name %></option>
+            <% end %>
+          </select>
+        </span>
+      </p>
+      <div class="clearfix"></div>
+    </div>
+    <div class="purchase">
+      <a href="#"><%= t ".order_now" %></a>
+    </div>
+  </div>
+</div>

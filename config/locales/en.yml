@@ -47,8 +47,15 @@ en:
   products:
     product:
       dola: "$"
-    index:
-      new_products: "New Product"
       view_more: "View more"
       add_to_cart: "Add to cart"
+    index:
+      new_products: "New Product"
       best_seller_products: "Best Seller Product"
+    show:
+      fabric_origin: "Fabric Origin"
+      vietnam: "Viet Nam"
+      made_in: "Made in"
+      color: "COLOR"
+      size: "SIZE"
+      order_now: "Order now"

@@ -8,7 +8,9 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
 }
-
+body{
+  background:rgba(245, 243, 243, 0.27);
+}
 input {
   height: auto !important;
 }
@@ -162,6 +164,7 @@ footer.footer {
   padding-top: 15px;
   padding-bottom: 15px;
   font-size: 12px;
+  clear: both;
 }
 .checkbox {
   margin-top: -10px;
@@ -201,6 +204,7 @@ footer.footer {
 }
 .top2 {
   padding-top: 74px;
+  background:rgba(245, 243, 243, 0.27);
 }
 .view-detail-product {
   position: absolute;
@@ -212,6 +216,9 @@ footer.footer {
   padding-top: 60px;
   top: -208px;
   transition: all ease 0.8s;
+}
+.view-detail-product a {
+  color:  white;
 }
 a.btn.btn-default {
   border: solid 2px $dark-blue;
@@ -254,4 +261,91 @@ p.price {
 h2.best-sl.text-center {
   margin-top: 8%;
   margin-bottom: 4%;
+}
+.detail-product{
+  width:100%;
+  float:right;
+  background:rgba(245, 243, 243, 0.27);
+  min-height:800px;
+  padding:2em;
+}
+.col-md-5.zoom-grid {
+  padding: 0;
+}
+.col-md-7.dress-info {
+  padding: 0;
+}
+.dress-name span {
+  float: right;
+  color: black;
+  position: absolute;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  top: 5%;
+  right: 12%;
+}
+.dress-name {
+  margin:30px 0;
+  position: relative;
+}
+.dress-name h3 {
+  width: 100%;
+  float: left;
+  font-size: 25px;
+  color: black;
+  font-weight: 500;
+  padding: 0;
+}
+.dress-name p {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 23px;
+  color: $light-gray;
+}
+.zoom-grid img.img-responsive {
+  margin: auto;
+  width: 100%;
+}
+.span1 {
+  margin: 18px 0;
+  padding: 15px 0;
+  border-top: 1px solid $gray-border-bottom;
+  border-bottom: 1px solid $gray-border-bottom;
+}
+.span3 {
+  margin: 18px 0;
+  padding: 15px 0;
+  border-top: 1px solid $gray-border-bottom;
+  border-bottom: 1px solid $gray-border-bottom;
+}
+.span4 {
+  border-bottom: 1px solid $gray-span;
+  padding-bottom: 18px;
+}
+p.left {
+  float: left;
+  font-size: 13px;
+  color: $black-left;
+  letter-spacing: 2px;
+  margin-right: 5%;
+  width: 40%;
+}
+p.right {
+  float: left;
+  font-size: 13px;
+  color: $black-left;
+  letter-spacing: 2px;
+}
+.purchase {
+  margin-top: 50px;
+}
+.purchase a{
+  float: left;
+  width: 50%;
+  font-size: 14px;
+  color: black;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  margin-top: 1px;
 }
