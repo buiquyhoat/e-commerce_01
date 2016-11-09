@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @sizes =  @product.sizes
+    @colors = @product.colors
   end
 
   private
