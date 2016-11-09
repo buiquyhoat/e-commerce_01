@@ -221,13 +221,13 @@ footer.footer {
 .view-detail-product a {
   color:  white;
 }
-a.btn.btn-default {
+.btn.btn-default {
   border: solid 2px $dark-blue;
   font-size: 12px;
   font-weight: 900;
 }
 
-a.btn.btn-default:hover {
+.btn.btn-default:hover {
   background: $dark-blue;
   color: white;
 }
