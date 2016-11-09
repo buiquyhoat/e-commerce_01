@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root "products#index"
   get "/:page", to: "static_pages#show"
   resources :products
+  resources :suggest_products
 end

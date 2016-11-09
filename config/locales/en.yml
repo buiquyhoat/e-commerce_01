@@ -41,6 +41,7 @@ en:
       profile: "Profile"
       settings: "Settings"
       log_out: "Log out"
+      suggest: "Suggest"
     footer:
       f_shop: "F-Shop"
       author: "Bui Quy Hoat & Tran Van Tuan"
@@ -75,3 +76,16 @@ en:
       color: "COLOR"
       size: "SIZE"
       order_now: "Order now"
+  suggest_products:
+    new:
+      please_log_in: "Please Log In"
+      suggest_create: "Suggest Create"
+    form:
+      compose_new_suggest_product: "Compose new suggest product"
+      post: "Post"
+    show:
+      suggest_name_label: "Suggest Product Name"
+      suggest_description: "Suggest Product Description"
+      infomation_suggest: "Suggest Information"
+    create:
+      suggest_create_suggest: "Suggest Product Create Sucessfully"

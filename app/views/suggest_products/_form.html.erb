@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @suggest_product do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+      <%= f.label :product_name %>
+      <%= f.text_field :product_name, class: "form-control" %>
+      <%= f.label :product_description %>
+      <%= f.text_area :product_description, placeholder:
+        t(".compose_new_suggest_product"), class: "form-control" %>
+      <%= f.submit t(".post"), class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
