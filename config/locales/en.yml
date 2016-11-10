@@ -99,3 +99,4 @@ en:
     index:
       edit: "Edit"
       your_cart: "Your Cart"
+      delete_confirm: "Are you sure, delete ? "

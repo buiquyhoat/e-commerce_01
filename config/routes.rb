@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get "/signup",  to: "users#new"
   post "/signup",  to: "users#create"
   get "/cart", to: "cart#index"
-  get "/cart/clear", to: "cart#destroy"
+  delete "/cart/:id/delete", to: "cart#destroy"
   post "/cart/:id", to: "cart#create"
+  patch "/cart/:id", to: "cart#update"
+  get "/cart/:id/edit", to: "cart#edit"
 
   resources :users
   resources :products
