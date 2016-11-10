@@ -24,4 +24,9 @@ class Product < ApplicationRecord
   def self.newest
     Product.order(created_at: :desc).limit(Settings.product.limit)
   end
+
+  def self.recent_views array_recent_product
+    array_recent_product.empty? ? [] :
+      Product.where("id IN (#{array_recent_product.join(",")})")
+  end
 end

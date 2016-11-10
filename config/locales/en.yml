@@ -69,6 +69,7 @@ en:
     index:
       new_products: "New Product"
       best_seller_products: "Best Seller Product"
+      recent_view_products: "Recent View Products"
     show:
       fabric_origin: "Fabric Origin"
       vietnam: "Viet Nam"
