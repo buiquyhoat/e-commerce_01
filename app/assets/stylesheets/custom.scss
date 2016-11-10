@@ -382,5 +382,25 @@ table.cart.table.table-hover th.col-md-4 {
   padding-left: 14%;
 }
 span.product-cart-quantity {
-  margin-left: -28px;
+  margin-left: 10%;
+}
+.col-md-7.button-quantity {
+  position: relative;
+}
+.button-quantity input.btn.btn-info {
+  width: 70%;
+  transform: translateY(-4px);
+  float: left;
+  margin-left: -27%;
+}
+i.fa.fa-refresh {
+  position: absolute;
+  top: 12%;
+  left: 13%;
+  color: white;
+  font-size: 16px;
+}
+p.empty-one {
+  position: relative;
+  transform: translateY(-3px);
 }
