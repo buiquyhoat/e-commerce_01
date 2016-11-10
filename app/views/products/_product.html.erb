@@ -20,8 +20,8 @@
         <p>
           <a href="<%= product_path(product) %>" class="btn btn-default">
             <%= t ".view_more" %></a>
-          <a href="#" class="btn btn-default pull-right"><%= t ".add_to_cart" %>
-            </a>
+          <%= link_to t(".add_to_cart"), "/cart/#{product.id}", method: :post,
+            class: "btn btn-default pull-right" %>
         </p>
       </div>
     </div>
