@@ -15,7 +15,9 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="navc"><%= link_to t(".suggest"), new_suggest_product_path %></li>
+        <li class="navc">
+          <%= link_to t(".suggest"), new_suggest_product_path %>
+        </li>
         <li class="navc"><%= link_to t(".help"), "/help" %></li>
         <li class="navc"><%= link_to t(".about"), "/about" %></li>
         <li class="navc"><%= link_to t(".contact"), "/contact" %></li>
@@ -37,6 +39,7 @@
           <li class="navc"><%= link_to t(".login"), login_path %></li>
         <% end %>
         <li class="navc"><%= link_to t(".signup"), signup_path %></li>
+        <li class="navc"><a href="/cart" class="fa fa-cart-arrow-down"></a></li>
       </ul>
     </div>
   </div>

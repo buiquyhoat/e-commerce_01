@@ -48,7 +48,7 @@
       <div class="clearfix"></div>
     </div>
     <div class="purchase">
-      <a href="#"><%= t ".order_now" %></a>
+      <%= link_to t(".add_to_cart"), "/cart/#{@product.id}", method: :post %>
     </div>
   </div>
 </div>

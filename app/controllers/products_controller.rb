@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   @product = Product.find_by id: params[:id]
   unless @product
     flash.now[:warning] = t "product.not_found"
-    redirect_to render_404
+    render_404
   end
  end
 end

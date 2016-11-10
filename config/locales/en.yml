@@ -75,7 +75,13 @@ en:
       made_in: "Made in"
       color: "COLOR"
       size: "SIZE"
-      order_now: "Order now"
+      add_to_cart: "Add to cart"
+    description: "Description"
+    price: "Price"
+    image: "Image"
+    quantity: "Quantity"
+    name: "Name"
+    empty: "Empty"
   suggest_products:
     new:
       please_log_in: "Please Log In"
@@ -89,3 +95,7 @@ en:
       infomation_suggest: "Suggest Information"
     create:
       suggest_create_suggest: "Suggest Product Create Sucessfully"
+  cart:
+    index:
+      edit: "Edit"
+      your_cart: "Your Cart"

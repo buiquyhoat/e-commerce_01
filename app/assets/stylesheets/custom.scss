@@ -351,7 +351,36 @@ p.right {
   letter-spacing: 1px;
   margin-top: 1px;
 }
-
 .table-show-user {
   width: 100%;
+}
+.cart img.img-responsive {
+  width: 25%;
+  margin: auto;
+  transform: translateY(-18px);
+}
+a.btn.btn-danger {
+  margin-bottom: 20px;
+  padding-left: 22px;
+  font-weight: 700;
+}
+i.fa.fa-trash-o {
+  position: absolute;
+  color: white;
+  z-index: 2;
+  top: 17%;
+  left: 5px;
+  font-weight: 400;
+}
+p.empty-all {
+  position: relative;
+}
+table.cart.table.table-hover td {
+  transform: translateY(17px);
+}
+table.cart.table.table-hover th.col-md-4 {
+  padding-left: 14%;
+}
+span.product-cart-quantity {
+  margin-left: -28px;
 }
