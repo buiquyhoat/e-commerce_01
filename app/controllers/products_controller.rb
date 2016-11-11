@@ -4,9 +4,11 @@ class ProductsController < ApplicationController
   def index
     @newest_products = Product.newest
     @best_sellers = Product.best_seller
+    @recent_views = Product.recent_views load_cookie_recent_product
   end
 
   def show
+    save_cookie_recent_product @product
     @sizes =  @product.sizes
     @colors = @product.colors
   end
