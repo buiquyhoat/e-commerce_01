@@ -10,6 +10,7 @@ input, textarea, select, .uneditable-input {
 }
 body{
   background:rgba(245, 243, 243, 0.27);
+  font-family: "Lato", sans-serif;
 }
 input {
   height: auto !important;
@@ -257,7 +258,7 @@ p.price {
 }
 .top2 .sanpham {
   border: solid 2px $light-blue;
-  box-shadow: 3px 3px 0.5px rgba(128, 128, 128, 0.55);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 h2.best-sl.text-center {
   margin-top: 8%;
@@ -357,7 +358,7 @@ p.right {
 .cart img.img-responsive {
   width: 25%;
   margin: auto;
-  transform: translateY(-18px);
+  transform: translateY(-10px);
 }
 a.btn.btn-danger {
   margin-bottom: 20px;
@@ -403,4 +404,33 @@ i.fa.fa-refresh {
 p.empty-one {
   position: relative;
   transform: translateY(-3px);
+}
+span.product-cart-image {
+  margin-left: 38%;
+}
+span.product-cart-description {
+  margin-left: 16%;
+}
+table.cart.table.table-hover.new-order td {
+  transform: translateY(7px);
+}
+.new-order span.product-cart-quantity {
+  margin-left: -40%;
+}
+.new-order span.product-cart-amout {
+  margin-left: -8%;
+}
+h4.col-md-offset-5.pull-right {
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+}
+h4.col-md-offset-5.pull-right span.total {
+  color: red;
+}
+.order-info .col-md-7.col-md-offset-5.customer-info {
+  background: rgba(128, 128, 128, 0.11);
+  padding: 20px 30px;
+  margin-top: 20px;
+  border-radius: 8px;
 }

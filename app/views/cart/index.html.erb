@@ -1,60 +1,79 @@
 <h2 class="tittle text-center"><%= t ".your_cart"%></h2>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <table class="cart table table-hover">
-        <thead>
-          <tr class="info row">
-            <th class="col-md-1"><%= t "products.name" %></th>
-            <th class="col-md-3"><%= t "products.description" %></th>
-            <th class="col-md-1"><%= t "products.price" %></th>
-            <th class="col-md-4">
-              <span class="product-cart-image"><%= t "products.image" %></span>
-            </th>
-            <th class="col-md-1">
-              <span class="product-cart-quantity">
-                <%= t "products.quantity" %>
-              </span>
-            </th>
-            <th class="col-md-2"></th>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="cart table table-hover">
+      <thead>
+        <tr class="info row">
+          <th class="col-md-1"><%= t "products.name" %></th>
+          <th class="col-md-3">
+            <span class="product-cart-description">
+              <%= t "products.description" %>
+            </span>
+          </th>
+          <th class="col-md-1"><%= t "products.price" %></th>
+          <th class="col-md-3">
+            <span class="product-cart-image"><%= t "products.image" %></span>
+          </th>
+          <th class="col-md-1">
+            <span class="product-cart-quantity">
+              <%= t "products.quantity" %>
+            </span>
+          </th>
+          <th class="col-md-1"><%= t "products.amout" %></th>
+          <th class="col-md-2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @product_quantity.each do |product, quantity|%>
+          <tr class="row">
+            <td class="col-md-1">
+              <%= link_to product.product_name, product_path(product) %></td>
+            <td class="product-des  col-md-3">
+              <%= product.description %>
+            </td>
+            <td class="col-md-1 price"><%= product.price %></td>
+            <td class="cart-image" class="col-md-3">
+              <%= image_tag product.image ? product.image.url : Settings.image,
+                class: "img-responsive" %>
+            </td>
+            <td class="col-md-2">
+              <div class="row">
+                <%= form_tag "/cart/#{product.id}", method: :patch do %>
+              <div class="col-md-5">
+                <%= number_field_tag :quantity, {}, value: quantity, min: "1" %>
+              </div>
+              <div class="col-md-7 button-quantity">
+                <%= submit_tag "", class: "btn btn-info"%>
+                <i class="fa fa-refresh"></i>
+              </div>
+              <% end %>
+              </div>
+            </td>
+            <td class="col-md-1">
+              <%= price_each_product_in_cart product, quantity %>
+            </td>
+            <td class="col-md-2">
+              <p class="empty-one">
+                <i class="fa fa-trash-o"></i>
+                <%= link_to t(".delete"), "/cart/#{product.id}/delete",
+                  method: :delete, data: {confirm: t(".delete_confirm")},
+                  class: "btn btn-danger" %>
+              </p>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <% @product_quantity.each do |product, quantity|%>
-            <% if quantity.present? %>
-            <tr class="row">
-              <td class="col-md-1">
-                <%= link_to product.product_name, product_path(product) %></td>
-              <td class="col-md-3"><%= product.description %></td>
-              <td class="col-md-1 price"><%= product.price %></td>
-              <td class="cart-image" class="col-md-3">
-                <%= image_tag product.image ? product.image.url : Settings.image,
-                  class: "img-responsive" %>
-              </td>
-              <td class="col-md-2">
-                <div class="row">
-                  <%= form_tag "/cart/#{product.id}", method: :patch do %>
-                <div class="col-md-5">
-                  <%= number_field_tag :quantity, {}, value: quantity, min: "1" %>
-                </div>
-                <div class="col-md-7 button-quantity">
-                  <%= submit_tag "", class: "btn btn-info"%>
-                  <i class="fa fa-refresh"></i>
-                </div>
-                <% end %>
-                </div>
-              </td>
-              <td class="col-md-2">
-                <p class="empty-one">
-                  <i class="fa fa-trash-o"></i>
-                  <%= link_to t(".delete"), "/cart/#{product.id}/delete",
-                    method: :delete, data: {confirm: t(".delete_confirm")},
-                    class: "btn btn-danger" %>
-                </p>
-              </td>
-            </tr>
-            <% end %>
           <% end %>
-        </tbody>
-      </table>
+      </tbody>
+    </table>
+    <div class="step-2 pull-right">
+      <% if @product_quantity.size > 0 %>
+        <%= link_to t(".step_two"),
+          current_user ? new_user_orders_path(current_user) : login_path,
+          class: "fa fa-long-arrow-right btn btn-default" %>
+      <% else %>
+        <%= link_to t(".new_cart"), products_path,
+        class: "fa fa-long-arrow-right btn btn-default" %>
+      <% end %>
     </div>
   </div>
+</div>
+<hr>

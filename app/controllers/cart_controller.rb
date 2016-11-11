@@ -9,7 +9,7 @@ class CartController < ApplicationController
     id = params[:id]
     session[:cart] = {} unless session[:cart]
     cart = session[:cart]
-    cart[id] = cart[id] ? (cart[id] + 1) : 1
+    cart[id] = cart[id] ? (cart[id].to_i + 1) : 1
     redirect_to cart_index_path
   end
 
@@ -20,6 +20,7 @@ class CartController < ApplicationController
 
   def destroy
    session[:cart][params[:id]] = nil
+   session[:cart].delete_if {|key, value| value.blank?}
    redirect_to action: :index
   end
 end

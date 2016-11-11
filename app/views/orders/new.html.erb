@@ -1,0 +1,81 @@
+<h2 class="tittle text-center"><%= t ".your_order"%></h2>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="cart table table-hover new-order">
+      <thead>
+        <tr class="info row">
+          <th class="col-md-2"><%= t "products.name" %></th>
+          <th class="col-md-3">
+            <span class="product-cart-description">
+              <%= t "products.description" %>
+            </span>
+          </th>
+          <th class="col-md-1"><%= t "products.price" %></th>
+          <th class="col-md-3">
+            <span class="product-cart-image"><%= t "products.image" %></span>
+          </th>
+          <th class="col-md-1">
+            <span class="product-cart-quantity">
+              <%= t "products.quantity" %>
+            </span>
+          </th>
+          <th class="col-md-2">
+            <span class="product-cart-amout">
+              <%= t "products.amout" %>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @product_quantity.each do |product, quantity|%>
+          <% if quantity.present? %>
+          <tr class="row">
+            <td class="col-md-2">
+              <%= link_to product.product_name, product_path(product) %></td>
+            <td class="product-des  col-md-3">
+              <%= product.description %>
+            </td>
+            <td class="col-md-1 price"><%= product.price %></td>
+            <td class="cart-image" class="col-md-3">
+              <%= image_tag product.image ? product.image.url : Settings.image,
+                class: "img-responsive" %>
+            </td>
+            <td class="col-md-1">
+              <%= quantity %>
+            </td>
+            <td class="col-md-2">
+              <%= price_each_product_in_cart product, quantity %>
+            </td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="order-info">
+      <hr>
+      <h4 class="col-md-offset-5 pull-right">
+        <%= t ".total_amout" %>
+        <span class="total">
+          <%= @total_amout %> $
+        </span>
+      </h4>
+      <div class="col-md-7 col-md-offset-5 customer-info">
+        <%= form_for [@user, @order] do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <h4><%= t ".shipping_address" %></h4>
+        <%= f.text_field :shipping_address, value: current_user.address,
+          class: "form-control", require: true %>
+        <h4><%= t ".shipping_name" %></h4>
+        <%= f.text_field :shipping_name, value: current_user.name,
+          class: "form-control", require: true %>
+        <h4><%= t ".shipping_email" %></h4>
+        <%= f.email_field :shipping_email, value: current_user.email,
+          class: "form-control", require: true %>
+        <h4><%= t ".message" %></h4>
+        <%= f.text_area :message, class: "form-control", rows: Settings.rows %>
+        <%= f.submit t(".order_now"), class: "btn btn-default" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

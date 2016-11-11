@@ -1,6 +1,7 @@
 name_size_max: 45
 email_length: 45
 password_min: 6
+rows: 5
 product:
  limit: 4
  limit_date: 7
