@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   patch "/cart/:id", to: "cart#update"
   get "/cart/:id/edit", to: "cart#edit"
 
-  resources :users
+  resources :users do
+    resource :orders, only: [:new, :create, :show]
+  end
   resources :products
   resources :suggest_products
   resources :cart

@@ -6,7 +6,8 @@
       <%= f.text_field :product_name, class: "form-control" %>
       <%= f.label :product_description %>
       <%= f.text_area :product_description, placeholder:
-        t(".compose_new_suggest_product"), class: "form-control" %>
+        t(".compose_new_suggest_product"), class: "form-control",
+          rows: Settings.rows %>
       <%= f.submit t(".post"), class: "btn btn-default" %>
     <% end %>
   </div>

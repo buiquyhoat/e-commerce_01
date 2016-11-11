@@ -80,6 +80,7 @@ en:
     description: "Description"
     price: "Price"
     image: "Image"
+    amout: "Amout"
     quantity: "Quantity"
     name: "Name"
     empty: "Empty"
@@ -101,3 +102,15 @@ en:
       edit: "Edit"
       your_cart: "Your Cart"
       delete_confirm: "Are you sure, delete ? "
+      step_two: "Step Two"
+  orders:
+    create:
+      orders_create_successfully: "Order create Sucessfully"
+      orders_create_failed: "Order create Failed"
+    new:
+      total_amout: "Total Amout: "
+      shipping_address: "Shipping Address"
+      shipping_name: "Shipping Name"
+      shipping_email: "Shipping Email"
+      order_now: "Order Now"
+      your_order: "Your Order"
