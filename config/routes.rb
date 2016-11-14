@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   get "/cart/:id/edit", to: "cart#edit"
 
   resources :users do
-    resource :orders, only: [:new, :create, :show]
+    resources :orders, only: [:new, :create, :show]
   end
-  resources :products
-  resources :suggest_products
-  resources :cart
+  resources :products, :suggest_products, :cart
+  namespace :api do
+    resources :orders
+  end
   get "/:page", to: "static_pages#show"
 end

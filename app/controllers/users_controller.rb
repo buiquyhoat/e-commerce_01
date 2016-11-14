@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
   before_action :verify_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @orders_history = Order.orders_history(@user)
   end
 
   private

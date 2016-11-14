@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :load_user, :load_session_cart, :verify_user
+  before_action :verify_user, :load_user, :load_session_cart
 
   def new
     @order = @user.orders.build
@@ -41,8 +41,8 @@ class OrdersController < ApplicationController
   end
 
   def load_user
-    @user = User.find_by id: params[:user_id]
-    ender_404 unless @user
+    @user = current_user
+    render_404 unless @user
   end
 
   def load_session_cart

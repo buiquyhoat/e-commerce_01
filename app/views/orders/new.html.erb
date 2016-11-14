@@ -33,7 +33,7 @@
             <td class="col-md-2">
               <%= link_to product.product_name, product_path(product) %></td>
             <td class="product-des  col-md-3">
-              <%= product.description %>
+              <%= get_short_description product %><%= t ".three_points" %>
             </td>
             <td class="col-md-1 price"><%= product.price %></td>
             <td class="cart-image" class="col-md-3">
@@ -61,19 +61,22 @@
       </h4>
       <div class="col-md-7 col-md-offset-5 customer-info">
         <%= form_for [@user, @order] do |f| %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <h4><%= t ".shipping_address" %></h4>
-        <%= f.text_field :shipping_address, value: current_user.address,
-          class: "form-control", require: true %>
-        <h4><%= t ".shipping_name" %></h4>
-        <%= f.text_field :shipping_name, value: current_user.name,
-          class: "form-control", require: true %>
-        <h4><%= t ".shipping_email" %></h4>
-        <%= f.email_field :shipping_email, value: current_user.email,
-          class: "form-control", require: true %>
-        <h4><%= t ".message" %></h4>
-        <%= f.text_area :message, class: "form-control", rows: Settings.rows %>
-        <%= f.submit t(".order_now"), class: "btn btn-default" %>
+          <h4><%= t ".shipping_address" %></h4>
+          <%= f.text_field :shipping_address, value: current_user.address,
+            class: "form-control", require: true %>
+
+          <h4><%= t ".shipping_name" %></h4>
+          <%= f.text_field :shipping_name, value: current_user.name,
+            class: "form-control", require: true %>
+
+          <h4><%= t ".shipping_email" %></h4>
+          <%= f.email_field :shipping_email, value: current_user.email,
+            class: "form-control", require: true %>
+
+          <h4><%= t ".message" %></h4>
+          <%= f.text_area :message, class: "form-control", rows: Settings.rows %>
+
+          <%= f.submit t(".order_now"), class: "btn btn-default" %>
         <% end %>
       </div>
     </div>

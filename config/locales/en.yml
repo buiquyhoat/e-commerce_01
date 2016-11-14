@@ -17,6 +17,11 @@ en:
       created_at: "Created at"
       updated_at: "Updated at"
       time_now: "Time now"
+      edit_prpfile: "Edit Profile"
+      user_profile: "User Profile"
+      order_history: "Order History"
+      edit_profile: "Edit Profile"
+      index: "#"
   sessions:
     new:
       log_in: "Log in"
@@ -114,3 +119,11 @@ en:
       shipping_email: "Shipping Email"
       order_now: "Order Now"
       your_order: "Your Order"
+      three_points: "..."
+  api:
+    orders:
+      order_details:
+        index: "#"
+        quantity: "Quantity"
+        product_id: "Id Product"
+        product_name: "Name Product"

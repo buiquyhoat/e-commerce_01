@@ -1,14 +1,69 @@
-<table class="table-show-user">
-  <tr>
-    <th><%= t ".name" %></th>
-    <th><%= t ".email" %></th>
-    <th><%= t ".created_at" %></th>
-    <th><%= t ".updated_at" %></th>
-  </tr>
-  <tr>
-    <td><%= @user.name %></td>
-    <td><%= @user.email %></td>
-    <td><%= @user.created_at %></td>
-    <td><%= @user.updated_at %></td>
-  </tr>
-</table>
+<ul class="nav nav-tabs col-md-8 col-md-offset-2">
+  <li class="active">
+    <a data-toggle="tab" href="#home"><%= t ".user_profile" %></a>
+  </li>
+  <li><a data-toggle="tab" href="#menu1"><%= t ".order_history" %></a></li>
+</ul>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div class="col-md-8 dress-info col-md-offset-2 user-profile">
+      <h2 class="tittle text-center"><%= t ".user_profile" %></h2>
+      <div class="user-info" id="user_info">
+        <div class="span span1">
+          <p class="left"><%= t ".name" %></p>
+          <p class="right"><%= @user.name %></p>
+          <div class="clearfix"></div>
+        </div>
+        <div class="span span1">
+          <p class="left"><%= t ".Email" %></p>
+          <p class="right"><%= @user.email %></p>
+          <div class="clearfix"></div>
+        </div>
+        <div class="span span1">
+          <p class="left"><%= t ".created_at" %></p>
+          <p class="right"><%= @user.created_at %></p>
+          <div class="clearfix"></div>
+        </div>
+        <div class="span span1">
+          <p class="left"><%= t ".updated_at" %></p>
+          <p class="right"><%= @user.updated_at %></p>
+          <div class="clearfix"></div>
+        </div>
+        <div>
+          <%= link_to t(".edit_profile"), edit_user_path,
+            class: "fa fa-long-arrow-right btn btn-default" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="menu1" class="tab-pane fade col-md-8 col-md-offset-2">
+    <h2 class="tittle text-center"><%= t ".order_history" %></h2>
+    <div class="order-history">
+      <table class="table table-hover">
+        <thead>
+          <tr class="info">
+            <th class="col-md-2"><%= t ".index" %></th>
+            <th class="col-md-3"><%= t ".order_date" %></th>
+            <th class="col-md-2"><%= t ".total_price" %></th>
+            <th class="col-md-5"><%= t ".show_more" %></th>
+          </tr>
+        </thead>
+        <tbody>
+           <% @orders_history.each_with_index do |order, index| %>
+            <tr>
+              <td class="col-md-2"> <%= index + 1 %> </td>
+              <td class="col-md-3"><%= order.created_at.strftime("%v") %></td>
+              <td class="col-md-2"><%= order.total_amount %> $</td>
+              <td class="col-md-5">
+                <i class="fa fa-angle-double-down" id="<%= order.id %>" ></i>
+                <div id="list_order_detail_<%= order.id %>"
+                  class="list_order_detail"s>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

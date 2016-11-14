@@ -29,7 +29,7 @@
             <td class="col-md-1">
               <%= link_to product.product_name, product_path(product) %></td>
             <td class="product-des  col-md-3">
-              <%= product.description %>
+              <%= get_short_description product %><%= t ".three_points" %>
             </td>
             <td class="col-md-1 price"><%= product.price %></td>
             <td class="cart-image" class="col-md-3">
@@ -67,7 +67,7 @@
     <div class="step-2 pull-right">
       <% if @product_quantity.size > 0 %>
         <%= link_to t(".step_two"),
-          current_user ? new_user_orders_path(current_user) : login_path,
+          current_user ? new_user_order_path(current_user) : login_path,
           class: "fa fa-long-arrow-right btn btn-default" %>
       <% else %>
         <%= link_to t(".new_cart"), products_path,

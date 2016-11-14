@@ -1,0 +1,23 @@
+<div id="order_detail">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-md-2"><%= t ".index" %></th>
+        <th class="col-md-2"><%= t ".quantity" %></th>
+        <th class="col-md-3"><%= t ".product_id" %></th>
+        <th class="col-md-5"><%= t ".product_name" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% order_details.each_with_index do |order_detail, index| %>
+      <tr>
+        <td class="col-md-2"> <%= index + 1 %> </td>
+        <td class="col-md-2"><%= order_detail.quantity %></td>
+        <td class="col-md-3"><%= order_detail.product_id %></td>
+        <td class="col-md-5"><%= order_detail.product_name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
