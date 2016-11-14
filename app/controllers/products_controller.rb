@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
+  include ProductsHelper
   before_action :load_product, only: :show
 
   def index
-    @newest_products = Product.newest
-    @best_sellers = Product.best_seller
-    @recent_views = Product.recent_views load_cookie_recent_product
+    @categories = Category.all
+    @product_support = Supports::ProductSupport.new load_cookie_recent_product, params
   end
 
   def show

@@ -1,4 +1,5 @@
 en:
+  default_hight: 500
   users:
     new:
       create_account: "Create my account"
@@ -67,6 +68,14 @@ en:
     about:
       about: "About"
   products:
+    search:
+      trademark: "Trade Mark"
+      price: "Price"
+      quantity: "Quantity"
+      advanced_search: "Advanced Search"
+      list_products: "List Products"
+      min: "Min"
+      max: "Max"
     product:
       dola: "$"
       view_more: "View more"
@@ -75,6 +84,7 @@ en:
       new_products: "New Product"
       best_seller_products: "Best Seller Product"
       recent_view_products: "Recent View Products"
+      enter_name_product: "Enter name product..."
     show:
       fabric_origin: "Fabric Origin"
       vietnam: "Viet Nam"

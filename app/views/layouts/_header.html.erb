@@ -14,13 +14,15 @@
       </a>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
         <li class="navc">
           <%= link_to t(".suggest"), new_suggest_product_path %>
         </li>
         <li class="navc"><%= link_to t(".help"), "/help" %></li>
         <li class="navc"><%= link_to t(".about"), "/about" %></li>
         <li class="navc"><%= link_to t(".contact"), "/contact" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li class="dropdown navc">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

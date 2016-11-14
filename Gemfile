@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 gem "rails", "~> 5.0.0", ">= 5.0.0.1"
+gem "will_paginate", "~> 3.1.0"
+gem "i18n-js", ">= 3.0.0.rc11"
 gem "font-awesome-sass", "~> 4.7.0"
 gem "sqlite3"
 gem "puma", "~> 3.0"
