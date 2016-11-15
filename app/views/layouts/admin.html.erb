@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t ".admin" %></title>
+  <%= stylesheet_link_tag "admin" %>
+    <%= javascript_include_tag "admin" %>
+</head>
+<body>
+  <div id="header">
+    <div class="logo">
+      <a href="#"><%= t ".admin" %>
+        <span><%= t(".page") %></span>
+      </a>
+    </div>
+  </div>
+  <div id="container">
+    <div class="row">
+      <div class="sidebar">
+        <ul id="nav">
+          <li>
+            <a class="selected" href="/admin">
+              <%= t ".dashboard" %>
+            </a>
+          </li>
+          <li><a href="#"><%= t ".orders" %></a></li>
+          <li><a href="#"><%= t ".suggestions" %></a></li>
+          <li><a href="#"><%= t ".users" %></a></li>
+          <li><%= link_to t(".categories"), admin_categories_path %></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h1><%= t ".dashboard" %></h1>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
