@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   patch "/cart/:id", to: "cart#update"
   get "/cart/:id/edit", to: "cart#edit"
 
+  namespace :admin do
+    resources :categories
+    root "home#index"
+  end
+
   resources :users do
     resources :orders, only: [:new, :create, :show]
   end
@@ -18,5 +23,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :orders
   end
+
   get "/:page", to: "static_pages#show"
 end

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i");
+@import "variable";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.logo a{
+  font-size: 1.4em;
+  color: $light_grey;
+}
+
+.logo a span{
+  font-weight: 300;
+}
+
+div#header {
+  width: 100%;
+  height: 50px;
+  background-color: $purple;
+  margin: 0 auto;
+}
+
+div#container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sidebar{
+  width: 250px;
+  height: 100%;
+  background-color: $light_black;
+  float: left;
+}
+
+ul#nav li{
+  list-style: none;
+}
+
+ul#nav li a{
+  color: $gray_footer;
+  display: block;
+  padding: 20px;
+  font-size: 1.2em;
+  border-bottom: 1px solid $black;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+ul#nav li a:hover {
+  background-color: $black_1;
+  color: red;
+  padding-left: 30px;
+}
+ul#nav li a.selected{
+  background-color: $black_1;
+  color: $blue;
+  padding-left: 20px;
+}
+
+.content{
+  width: auto;
+  margin-left: 250px;
+  height: 100%;
+  background-color: $light_yellow;
+  padding: 15px;
+}
+
+.content p{
+  color: $strong_black;
+  font-size: 1.0em;
+}
+
+.button {
+  background-color: $green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.wrapper {
+  text-align: center;
+}

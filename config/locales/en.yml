@@ -51,6 +51,15 @@ en:
     footer:
       f_shop: "F-Shop"
       author: "Bui Quy Hoat & Tran Van Tuan"
+    admin:
+      categories: "Categories"
+      admin: "Admin"
+      page: "Page"
+      dashboard: "Dashboard"
+      orders: "Orders"
+      suggestions: "Suggestions"
+      users: "Users"
+      categories: "Categories"
   static_pages:
     contact:
       mail_us: "Mail us"
@@ -137,3 +146,29 @@ en:
         quantity: "Quantity"
         product_id: "Id Product"
         product_name: "Name Product"
+  admin:
+    categories:
+      edit:
+        update_category: "Update category"
+        save_changes: "Save changes"
+      new:
+        new_category: "New category"
+        create_category: "Create category"
+      index:
+        category_name: "Category name"
+        description: "Description"
+        left_index: "Left index"
+        right_index: "Right index"
+        depth: "Depth"
+        edit: "Edit"
+        delete: "Delete"
+        add_children: "Add children"
+      create:
+        add_category_successful: "Add child successful!"
+      update:
+        category_updated: "Category updated!"
+        update_failed: "Update failed!"
+      category:
+        delete: "Delete"
+        edit: "Edit"
+        add: "Add"

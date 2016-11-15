@@ -11,7 +11,7 @@ User.create(name: "buiquyhoat",
   password: "123456",
   admin: true)
 
-Category.create(category_name: "men", left_node: 0, right_node: 1, depth: 0)
+Category.create(category_name: "men", left_node: 1, right_node: 2, depth: 1)
 
 (1..10).each do |stt|
   Product.create(
