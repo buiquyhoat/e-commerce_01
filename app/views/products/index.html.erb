@@ -31,17 +31,104 @@
 </div>
 <div class="top2">
   <div class="container">
-    <h2 class="text-center"><%= t ".new_products" %></h2>
+    <h2 class="text-center"><%= t ".advanced_search" %></h2>
+    <%= form_tag products_path, method: :get, class:
+      "form-search-product" do %>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td class="col-md-4"><%= t ".trademark" %></td>
+            <td class="col-md-8">
+              <%= image_tag Settings.image_trade_1,
+                class: "img-responsive trade_image" %>
+              <%= image_tag Settings.image_trade_2,
+                class: "img-responsive trade_image" %>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-md-4">
+              <%= t ".price" %>
+            </td>
+            <td class="col-md-8">
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".min" %>
+                </div>
+                <div class="col-md-4">
+                  <%= number_field_tag :min_price, params[:min_price],
+                    class: "form-control", min: "1" %>
+                </div>
+                <div class="col-md-2">
+                  <%= t ".max" %>
+                </div>
+                <div class="col-md-4">
+                  <%= number_field_tag :max_price, params[:max_price],
+                    class: "form-control", min: "1" %>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="col-md-4"><%= t ".quantity" %></td>
+            <td class="col-md-8">
+              <div class="row">
+                <div class="col-md-2">
+                  <%= t ".min" %>
+                </div>
+                <div class="col-md-4">
+                  <%= number_field_tag :min_quantity, params[:min_quantity],
+                    class: "form-control", min: "1" %>
+                </div>
+                <div class="col-md-2">
+                  <%= t ".max" %>
+                </div>
+                <div class="col-md-4">
+                  <%= number_field_tag :max_quantity, params[:max_quantity],
+                    class: "form-control", min: "1" %>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="col-md-4">
+          <%= select_tag :category, options_for_select(@categories.collect {|c|
+            [c.category_name, c.id]}),
+            {class: "btn btn-default", id: "category_select",
+              include_blank: t(".categories")} %>
+        </div>
+        <div class="col-md-8 text-search">
+          <%= text_field_tag :product_name, params[:product_name],
+            class: "form-control input-lg", placeholder: t(".enter_name_product")
+          %>
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
+      <div class="button-tag">
+        <%= submit_tag "" %>
+      </div>
+    <% end %>
+    <h2 class="text-center"><%= t ".list_products" %></h2>
     <div class="row">
-        <%= render @newest_products %>
+      <div class="col-md-12">
+        <%= render @product_support.search %>
+      </div>
+      <div class="col-md-12 pagi">
+        <%= will_paginate @product_support.search %>
+      </div>
+    </div>
+    <h2 class="text-center"><%= t ".new_products" %></h2>
+    <div class="row newest-product">
+      <%= render @product_support.newest_products %>
     </div>
     <h2 class="best-sl text-center"><%= t ".best_seller_products" %></h2>
-    <div class="row">
-        <%= render @best_sellers %>
+    <div class="row best-product">
+      <%= render @product_support.best_sellers %>
     </div>
     <h2 class="best-sl text-center"><%= t ".recent_view_products" %></h2>
-    <div class="row">
-        <%= render @recent_views %>
+    <div class="row recent-view-product">
+      <%= render @product_support.recent_views %>
     </div>
   </div>
 </div>
