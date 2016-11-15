@@ -7,7 +7,12 @@
   <td>
     <%= link_to t(".edit"), edit_admin_category_path(category.id) %>
   </td>
-  <td><%= link_to t(".delete"),"#" %></td>
+  <td>
+    <% if current_user.admin? %>
+    <%= link_to t(".delete"), [:admin, category], method: "delete",
+      data: {confirm: t(".you_sure")} %>
+      <% end %>
+  </td>
   <td>
     <%= link_to t(".add"), "/admin/categories/new?parent_id=#{category.id}" %>
   </td>

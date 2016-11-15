@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
   before_action :verify_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -35,8 +36,8 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :name, :email, :password,
-      :password_confirmation
+    params.require(:user).permit :name, :email, :address,
+      :phone_number, :password, :password_confirmation
   end
 
   def load_user

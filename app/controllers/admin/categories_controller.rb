@@ -1,6 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin"
   before_action :load_category, except: [:index]
+  before_action :require_admin
 
   def index
     @categories = Category.all.order("left_node")
@@ -32,6 +33,12 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @category.destroy
+    flash[:success] = t ".category_deleted"
+    redirect_to admin_categories_path
   end
 
   private

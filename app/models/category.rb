@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
   has_many :products, class_name: Product.name, foreign_key: :category_id
+  after_destroy :rebuild_left_right_index
 
   def set_category parent_id
     max_right = get_max_right
@@ -17,13 +18,29 @@ class Category < ApplicationRecord
       Category.where("left_node >= ?", parent_category.right_node.to_i)
         .update_all("left_node = left_node + 2")
       self.update(left_node: parent_category.right_node.to_i,
-          right_node: parent_category.right_node.to_i + 1,
-          depth: parent_category.depth.to_i + 1)
+        right_node: parent_category.right_node.to_i + 1,
+        depth: parent_category.depth.to_i + 1)
     end
+  end
+
+  def destroy
+    Category.where("left_node between ? and ?",
+      self.left_node, self.right_node).each do |category|
+      category.delete
+    end
+    rebuild_left_right_index
   end
 
   private
   def get_max_right
     Category.where("depth = ?", 1).maximum(:right_node)
+  end
+
+  def rebuild_left_right_index
+    width = self.right_node - self.left_node + 1
+    Category.where("left_node > ?", self.right_node)
+    .update_all("left_node = left_node - #{width}")
+    Category.where("right_node > ?", self.right_node)
+    .update_all("right_node = right_node - #{width}")
   end
 end

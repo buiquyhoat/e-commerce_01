@@ -185,6 +185,7 @@ en:
         edit: "Edit"
         delete: "Delete"
         add_children: "Add children"
+        add: "Add"
       create:
         add_category_successful: "Add child successful!"
       update:
@@ -194,6 +195,9 @@ en:
         delete: "Delete"
         edit: "Edit"
         add: "Add"
+        you_sure: "Are you sure to delete this?"
+      destroy:
+        category_deleted: "Category was deleted!"
     products:
       index:
         advanced_search: "Advanced Search"
