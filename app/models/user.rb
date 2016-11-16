@@ -58,8 +58,8 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
-  def self.is_user? user
-    user == current_user
+  def is_user? current_user
+      self == current_user
   end
 
   private
