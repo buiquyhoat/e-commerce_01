@@ -1,0 +1,46 @@
+<div class="col-md-12 admin-product">
+  <h2 class="text-center"><%= t ".advanced_search" %></h2>
+    <%= form_tag admin_users_path, method: :get, class:
+      "form-search-product" do %>
+      <%= render "shared/search_user" %>
+    <% end %>
+  <h2 class="text-center"><%= t ".list_users" %></h2>
+  <table class="cart table table-hover new-order">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-1"><%= t ".index" %></th>
+        <th class="col-md-2"><%= t ".name" %></th>
+        <th class="col-md-2"><%= t ".email" %></th>
+        <th class="col-md-2"><%= t ".address" %></th>
+        <th class="col-md-2"><%= t ".phone_number" %></th>
+        <th class="col-md-2"><%= t ".created_at" %></th>
+        <th class="col-md-1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @search_user.each_with_index do |user, index|%>
+        <tr class="row">
+          <td class="col-md-1">
+            <% if params[:page] ||= 1 %>
+              <%= index_for params[:page], index, Settings.users_admin_per_page %>
+            <% end %>
+          </td>
+          <td class="col-md-2"><%= user.name %></td>
+          <td class="col-md-2"><%= user.email %></td>
+          <td class="col-md-2"><%= user.address %></td>
+          <td class="col-md-2"><%= user.phone_number %></td>
+          <td class="col-md-2"><%= user.created_at.strftime("%v") %></td>
+          <th class="col-md-1 option-product-admin">
+            <%= link_to admin_user_path(user), method: :delete,
+              class: "btn btn-default", data: {confirm: t(".delete_confirm")} do %>
+              <span class="fa fa-trash-o"></span>
+            <% end %>
+          </th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-12 pagi">
+    <%= will_paginate @search_user %>
+  </div>
+</div>

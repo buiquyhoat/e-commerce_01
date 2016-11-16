@@ -580,3 +580,11 @@ em.current {
 form.form-search-product {
   transform: translateX(-15px);
 }
+
+.sanpham img.img-responsive, .detail-product img.img-responsive {
+  height: 204px;
+}
+
+.thumbnail .description.text-center {
+  height: 75px;
+}

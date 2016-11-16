@@ -5,11 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(name: "buiquyhoat",
+User.create(
+  name: "buiquyhoat",
   email: "buiquyhoat@gmail.com",
   address: "ha noi",
   password: "123456",
+  phone_number: "0987654321",
   admin: true)
+
+(1..10).each do |stt|
+  User.create(
+    name: "buiquyhoat#{stt}",
+    email: "buiquyhoat#{stt}@gmail.com",
+    address: "ha noi #{stt}",
+    password: "123456",
+    phone_number: "098765432#{stt}",
+    admin: false)
+end
 
 Category.create(category_name: "men", left_node: 1, right_node: 2, depth: 1)
 

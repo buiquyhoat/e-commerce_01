@@ -1,0 +1,99 @@
+<%= form_for [:admin, @product], html: {multipart: true} do |f| %>
+  <div class="form-group">
+    <%=  render "shared/error_messages", object: @product %>
+    <div class="col-md-4 image">
+      <%= f.label :image %>
+      <%= image_tag  Settings.image, id: "image-product", class: "img-responsive" %>
+      <div class="btn btn-success fileinput-button">
+        <i class="fa fa-pencil"></i>
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :product_name %>
+        <%= f.text_field :product_name, class: "form-control" %>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :category %></br>
+            <%= f.select :category_id, options_for_select(@category.collect{
+              |category| [category.category_name, category.id]}),
+              {class: "form-control", include_blank: t(".all")} %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :price %>
+            <%= f.number_field :price, min: Settings.min_field,
+              class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :rating %>
+            <%= f.number_field :rating, min: Settings.min_field,
+              class: "form-control" %>
+           </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity, min: Settings.min_field,
+              class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="color-form">
+            <h2 class="text-center new-color"><%= t ".color" %></h2>
+            <div class="form-group">
+              <%= f.fields_for :colors do |color_builder| %>
+                <%= render "color_fields", f: color_builder %>
+              <% end %>
+            </div>
+            <div class="form-group">
+              <div class="btn btn-default add-more-color">
+                <%= link_to_add_fields t(".add_more"), f, :colors %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="color-form">
+            <h2 class="text-center new-color"><%= t ".size" %></h2>
+            <div class="form-group">
+              <%= f.fields_for :sizes do |size_builder| %>
+                <%= render "size_fields", f: size_builder %>
+              <% end %>
+            </div>
+            <div class="form-group">
+              <div class="btn btn-default add-more-color">
+                <%= link_to_add_fields t(".add_more"), f, :sizes %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, placeholder:
+        t(".compose_new_description_product"), class: "form-control ckeditor" %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+          <%= f.submit t(".save"),
+            class: "btn btn-default" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
