@@ -28,6 +28,19 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    def search name, email, phone_number, address
+      users = User.all
+      users = users.where(
+        "name LIKE ?","%#{name}%") if name.present?
+      users = users.where(
+        "email LIKE ?", "%#{email}%") if email.present?
+      users = users.where(
+        "phone_number LIKE ?", "%#{phone_number}%") if phone_number.present?
+      users = users.where(
+        "address LIKE ?", "%#{address}%") if address.present?
+      users
+    end
   end
 
   def remember

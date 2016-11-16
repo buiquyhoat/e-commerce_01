@@ -1,0 +1,47 @@
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td class="col-md-4">
+        <%= t ".address" %>
+      </td>
+      <td class="col-md-8">
+        <%= text_field_tag :address, params[:address],
+          class: "form-control", placeholder: t(".enter_address")
+        %>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-md-4">
+        <%= t ".phone_number" %>
+      </td>
+      <td class="col-md-8">
+        <%= text_field_tag :phone_number, params[:phone_number],
+          class: "form-control", placeholder: t(".enter_phone_number")
+        %>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-md-4">
+        <%= t ".email" %>
+      </td>
+      <td class="col-md-8">
+        <%= text_field_tag :email, params[:email],
+          class: "form-control", placeholder: t(".enter_email")
+        %>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-md-4">
+        <%= t ".name" %>
+      </td>
+      <td class="col-md-8">
+        <%= text_field_tag :name, params[:name],
+          class: "form-control", placeholder: t(".enter_user_name")
+        %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="button-tag">
+  <%= submit_tag "" %>
+</div>

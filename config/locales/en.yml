@@ -6,9 +6,19 @@ en:
       quantity: "Quantity"
       price: "Price"
       enter_name_product: "Enter name product ... "
+    search_user:
+      enter_address: "Enter address ... "
+      enter_email: "Enter email ... "
+      enter_phone_number: "Enter phone number ... "
+      enter_user_name: "Enter username ... "
+      email: "Email"
+      name: "Name"
+      phone_number: "Phone number"
+      address: "Address"
   activerecord:
     model:
       category: "Category"
+      user: "User"
       product: "Product"
       comment: "Commnet"
       suggest: "Suggest"
@@ -69,7 +79,7 @@ en:
       dashboard: "Dashboard"
       orders: "Orders"
       suggestions: "Suggestions"
-      users: "Users"
+      users_cat: "Users"
       products_cat: "Products"
   static_pages:
     contact:
@@ -193,4 +203,18 @@ en:
         delete_confirm: "Are you sure ? "
       destroy:
         destroy_success: "Destroy product successfully"
+        destroy_error: "Destroy error"
+    users:
+      index:
+        advanced_search: "Advanced Search"
+        list_users: "List Users"
+        index: "#"
+        email: "Email"
+        name: "Name"
+        phone_number: "Phone number"
+        address: "Address"
+        created_at: "Created at"
+        delete_confirm: "Are you sure ? "
+      destroy:
+        destroy_success: "Destroy user successfully"
         destroy_error: "Destroy error"
