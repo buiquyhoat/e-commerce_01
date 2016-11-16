@@ -21,12 +21,12 @@
         </div>
         <div class="span span1">
           <p class="left"><%= t ".created_at" %></p>
-          <p class="right"><%= @user.created_at %></p>
+          <p class="right"><%= @user.created_at.strftime("%v") %></p>
           <div class="clearfix"></div>
         </div>
         <div class="span span1">
           <p class="left"><%= t ".updated_at" %></p>
-          <p class="right"><%= @user.updated_at %></p>
+          <p class="right"><%= @user.updated_at.strftime("%v") %></p>
           <div class="clearfix"></div>
         </div>
         <div>

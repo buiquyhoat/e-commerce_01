@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
   layout "admin"
+  before_action :require_admin
 
   def index
     @search = Product.paginate(page: params[:page],
