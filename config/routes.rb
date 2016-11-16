@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   get "/cart/:id/edit", to: "cart#edit"
 
   namespace :admin do
-    resources :categories
     root "home#index"
+    resources :categories, :products
   end
 
   resources :users do

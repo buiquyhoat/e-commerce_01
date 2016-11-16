@@ -1,4 +1,17 @@
 en:
+  shared:
+    search_product:
+      min: "Min"
+      max: "Max"
+      quantity: "Quantity"
+      price: "Price"
+      enter_name_product: "Enter name product ... "
+  activerecord:
+    model:
+      category: "Category"
+      product: "Product"
+      comment: "Commnet"
+      suggest: "Suggest"
   default_hight: 500
   users:
     new:
@@ -21,7 +34,6 @@ en:
       edit_prpfile: "Edit Profile"
       user_profile: "User Profile"
       order_history: "Order History"
-      edit_profile: "Edit Profile"
       index: "#"
   sessions:
     new:
@@ -33,7 +45,6 @@ en:
       invalid_email_password: "Invalid email/password combination!"
   ecomerces: "Ecommerces"
   hello: "Hello world"
-  ecomerces: "E-Commerces"
   layouts:
     header:
       framgia: "F-Shop"
@@ -59,7 +70,7 @@ en:
       orders: "Orders"
       suggestions: "Suggestions"
       users: "Users"
-      categories: "Categories"
+      products_cat: "Products"
   static_pages:
     contact:
       mail_us: "Mail us"
@@ -94,6 +105,7 @@ en:
       best_seller_products: "Best Seller Product"
       recent_view_products: "Recent View Products"
       enter_name_product: "Enter name product..."
+      list_products: "List Products"
     show:
       fabric_origin: "Fabric Origin"
       vietnam: "Viet Nam"
@@ -172,3 +184,13 @@ en:
         delete: "Delete"
         edit: "Edit"
         add: "Add"
+    products:
+      index:
+        advanced_search: "Advanced Search"
+        list_products: "List Products"
+        three_points: "..."
+        index: "#"
+        delete_confirm: "Are you sure ? "
+      destroy:
+        destroy_success: "Destroy product successfully"
+        destroy_error: "Destroy error"
