@@ -6,4 +6,8 @@ module ApplicationHelper
   def get_short_description product
     return product.description.byteslice(0,60)
   end
+
+  def index_for object, index, per_page
+    (object.to_i - 1)*per_page + index + 1
+  end
 end

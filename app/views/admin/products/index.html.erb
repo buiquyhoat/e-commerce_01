@@ -1,0 +1,70 @@
+<div class="col-md-12 admin-product">
+  <h2 class="text-center"><%= t ".advanced_search" %></h2>
+    <%= form_tag admin_products_path, method: :get, class:
+      "form-search-product" do %>
+      <%= render "shared/search_product" %>
+    <% end %>
+  <h2 class="text-center"><%= t ".list_products" %></h2>
+  <div class="pull-right btn-add-product">
+    <%= link_to "", products_path, class: "fa fa-plus btn btn-default" %>
+  </div>
+  <table class="cart table table-hover new-order">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-1"><%= t ".index" %></th>
+        <th class="col-md-2"><%= t "products.name" %></th>
+        <th class="col-md-3">
+          <span class="product-cart-description">
+            <%= t "products.description" %>
+          </span>
+        </th>
+        <th class="col-md-2">
+          <span class="product-cart-image"><%= t "products.image" %></span>
+        </th>
+        <th class="col-md-1"><%= t "products.price" %></th>
+        <th class="col-md-1">
+          <span class="product-cart-quantity">
+            <%= t "products.quantity" %>
+          </span>
+        </th>
+        <th class="col-md-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @search.each_with_index do |product, index|%>
+        <tr class="row">
+          <td class="col-md-1">
+            <% if params[:page] ||= 1 %>
+              <%= index_for params[:page], index, Settings.products_admin_per_page %>
+            <% end %>
+          </td>
+          <td class="col-md-2">
+            <%= product.product_name %></td>
+          <td class="product-des  col-md-3">
+            <%= get_short_description product %><%= t ".three_points" %>
+          </td>
+          <td class="cart-image" class="col-md-2">
+            <%= image_tag product.image ? product.image.url : Settings.image,
+              class: "img-responsive" %>
+          </td>
+          <td class="col-md-1 price"><%= product.price %></td>
+          <td class="col-md-1 admin-product-quantity">
+            <%= product.quantity %>
+          </td>
+          <th class="col-md-2 option-product-admin">
+            <a href="#" class="btn btn-default button-1">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <%= link_to admin_product_path(product), method: :delete,
+              class: "btn btn-default", data: {confirm: t(".delete_confirm")} do %>
+              <span class="fa fa-trash-o"></span>
+            <% end %>
+          </th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-12 pagi">
+    <%= will_paginate @search %>
+  </div>
+</div>

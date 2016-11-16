@@ -2,20 +2,22 @@
 <html>
 <head>
   <title><%= t ".admin" %></title>
+  <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "admin" %>
-    <%= javascript_include_tag "admin" %>
+  <%= javascript_include_tag "admin" %>
 </head>
 <body>
-  <div id="header">
+  <div id="header" class="container-fluid">
     <div class="logo">
-      <a href="#"><%= t ".admin" %>
+      <a href="#">
+        <span><%= t ".admin" %></span>
         <span><%= t(".page") %></span>
       </a>
     </div>
   </div>
-  <div id="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="sidebar">
+      <div class="sidebar col-md-3">
         <ul id="nav">
           <li>
             <a class="selected" href="/admin">
@@ -23,12 +25,13 @@
             </a>
           </li>
           <li><a href="#"><%= t ".orders" %></a></li>
+          <li><%= link_to t(".products_cat"), admin_products_path %></li>
           <li><a href="#"><%= t ".suggestions" %></a></li>
           <li><a href="#"><%= t ".users" %></a></li>
           <li><%= link_to t(".categories"), admin_categories_path %></li>
         </ul>
       </div>
-      <div class="content">
+      <div class="content col-md-9">
         <h1><%= t ".dashboard" %></h1>
         <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>"><%= message %></div>

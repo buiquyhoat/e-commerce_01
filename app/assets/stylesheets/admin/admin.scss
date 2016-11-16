@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i");
 @import "variable";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +8,10 @@
 }
 
 body {
-  font-family: "Open Sans";
+  font-family: "Lato", sans-serif;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
 }
 
@@ -30,8 +31,7 @@ a {
 }
 
 div#header {
-  width: 100%;
-  height: 50px;
+  height: 70px;
   background-color: $purple;
   margin: 0 auto;
 }
@@ -42,10 +42,10 @@ div#container{
 }
 
 .sidebar{
-  width: 250px;
-  height: 100%;
+  min-height: 777px;
   background-color: $light_black;
-  float: left;
+  margin-right: -5%;
+  margin-left: -1%;
 }
 
 ul#nav li{
@@ -76,10 +76,8 @@ ul#nav li a.selected{
 }
 
 .content{
-  width: auto;
-  margin-left: 250px;
-  height: 100%;
-  background-color: $light_yellow;
+  min-height: 777px;
+  background-color: white;
   padding: 15px;
 }
 
@@ -103,4 +101,134 @@ ul#nav li a.selected{
 
 .wrapper {
   text-align: center;
+}
+
+.col-md-8.text-search i.fa.fa-search {
+  position: absolute;
+  top: 28%;
+  left: 5%;
+  font-size: 15px;
+  color: black;
+}
+
+.col-md-8.text-search {
+  position: relative;
+}
+
+.button-tag input[type="submit"] {
+  display: none;
+}
+
+.input-lg {
+  height: 40px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  padding-left: 43px;
+  padding-right: 43px;
+  border-radius: 23px;
+  border: solid 1px $dark-blue;
+}
+
+.form-search-product .btn.btn-default {
+  border: solid 1px $dark-blue;
+  font-weight: 400;
+}
+
+h2.text-center {
+  color: $dark-blue;
+  font-size: 33px;
+  font-weight: 700;
+  text-shadow: 3px 1px 1px lightblue;
+  margin-bottom: 37px;
+}
+
+.logo a span {
+  font-weight: 400;
+  color: white;
+}
+
+.cart img.img-responsive {
+  width: 33%;
+  margin: auto;
+}
+
+span.product-cart-image {
+  margin-left: 32%;
+}
+
+td.col-md-1.admin-product-quantity {
+  padding-left: 3%;
+}
+
+.pagination>a, .pagination>span {
+  border: none;
+  color: $blue-strong;
+  font-weight: 600;
+}
+
+.pagination>a:hover {
+  border-color: $green-strong;
+  background: $green-strong;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.pagination>span, .pagination>a:last-child{
+  background: $blue-strong;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.pagination>a:first-child:hover, .pagination>a:last-child:hover {
+  background: $gray-small;
+}
+
+ul.pagination {
+  border: solid 0px;
+}
+
+em.current {
+  font-style: normal;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-color: $green-strong;
+  background: $green-strong;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.pagination > a {
+  padding: 5px 10px;
+}
+
+.col-md-12 .pagination {
+  margin-left: 1.5%;
+}
+
+th.col-md-2.option-product-admin {
+  padding-left: 4%;
+}
+
+a.btn.btn-default.button-1 {
+  margin-right: 10%;
+}
+
+.btn.btn-default {
+  border: solid 1px $dark-blue;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.btn.btn-default:hover {
+  background: $dark-blue;
+  color: white;
+}
+.pull-right.btn-add-product {
+  transform: translateX(-86%);
+  margin-bottom: 1px;
 }
