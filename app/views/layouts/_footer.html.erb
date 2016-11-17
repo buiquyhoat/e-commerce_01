@@ -1,4 +1,23 @@
-<footer class="footer">
-  <%= t ".the" %> <a href="http://www.railstutorial.org/"><%= t ".f_shop" %></a>
-  <%= t ".by" %> <a href="http://www.michaelhartl.com/"><%= t ".author" %></a>
-</footer>
+<div id="footer">
+  <div>
+    <p><%= t "footer.designby" %></p>
+    <ul>
+      <li>
+        <%= link_to t("footer.twitter"),
+          "http://freewebsitetemplates.com/go/twitter/", id: "twitter" %>
+      </li>
+      <li>
+        <%= link_to t("footer.facebook"),
+          "http://freewebsitetemplates.com/go/facebook/", id: "facebook" %>
+      </li>
+      <li>
+        <%= link_to t("footer.googleplus"),
+          "http://freewebsitetemplates.com/go/googleplus/", id: "googleplus" %>
+      </li>
+      <li>
+        <%= link_to t("footer.pinterest"),
+          "http://pinterest.com/fwtemplates/", id: "pinterest"%>
+      </li>
+    </ul>
+  </div>
+</div>

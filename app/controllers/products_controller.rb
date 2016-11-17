@@ -9,16 +9,15 @@ class ProductsController < ApplicationController
 
   def show
     save_cookie_recent_product @product
-    @sizes =  @product.sizes
-    @colors = @product.colors
+    @comments = @product.comments.newest
   end
 
   private
   def load_product
-  @product = Product.find_by id: params[:id]
-  unless @product
-    flash.now[:warning] = t "product.not_found"
-    render_404
+    @product = Product.find_by id: params[:id]
+    unless @product
+      flash.now[:warning] = t "product.not_found"
+      render_404
+    end
   end
- end
 end

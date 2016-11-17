@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   resources :users do
     resources :orders, only: [:new, :create, :show]
   end
-  resources :products, :suggest_products, :cart
+
+  resources :products do
+    resources :comments
+  end
+  resources :suggest_products, :cart
   namespace :api do
     resources :orders
   end

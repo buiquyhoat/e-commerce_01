@@ -3,13 +3,15 @@
     <div class="flexslider">
       <%= image_tag @product.image? ? @product.image.url : Settings.image, class: "img-responsive" %>
     </div>
+    <div class="purchase">
+      <%= link_to t(".add_to_cart"), "/cart/#{@product.id}", method: :post %>
+    </div>
   </div>
   <div class="col-md-8 dress-info">
     <div class="dress-name">
       <h3><%= @product.product_name %></h3>
       <span><%= @product.price %>$</span>
       <div class="clearfix"></div>
-      <div><%= raw get_short_description @product %><%= t ".three_points" %></div>
     </div>
     <div class="span span1">
       <p class="left"><%= t ".fabric_origin" %></p>
@@ -26,7 +28,7 @@
       <p class="right">
         <span class="selection-box">
           <select class="domains valid" name="domains">
-            <%= @colors.each do |color| %>
+            <%= @product.colors.each do |color| %>
               <option value="<%= color.id %>"><%= color.color_name %></option>
             <% end %>
           </select>
@@ -39,7 +41,7 @@
       <p class="right">
         <span class="selection-box">
           <select class="domains valid" name="domains">
-            <%= @sizes.each do |size| %>
+            <%= @product.sizes.each do |size| %>
               <option value="<%= size.id %>"><%= size.size_name %></option>
             <% end %>
           </select>
@@ -47,8 +49,42 @@
       </p>
       <div class="clearfix"></div>
     </div>
-    <div class="purchase">
-      <%= link_to t(".add_to_cart"), "/cart/#{@product.id}", method: :post %>
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#full_description"><%= t ".full_description" %></a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#comment"><%= t ".comment" %></a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="full_description" class="tab-pane fade in active">
+        <%= raw @product.description %>
+      </div>
+      <div id="comment" class="tab-pane fade">
+        <% if logged_in? %>
+          <span class="header-comment">
+            <%= t ".write_your_comment" %>
+          </span>
+          <div class="form-group">
+            <%= form_for [@product, @product.comments.new], remote: true do  |f| %>
+              <%= f.text_area :content, class: "form-control",
+                placeholder: t(".compose_new_comment"), class: "form-control",
+                rows: Settings.rows %>
+              <%= f.submit t(".submit"), class: "btn btn-default btn_comment" %>
+            <% end %>
+          </div>
+        <% else %>
+          <%= t ".please_click" %>
+          <%= link_to t(".here"), login_path %><%= t ".to_login" %>
+        <% end %>
+
+        <div class="list-comment">
+          <ul id="comments">
+            <%= render @comments %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
