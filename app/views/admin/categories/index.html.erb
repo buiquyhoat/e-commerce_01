@@ -1,24 +1,61 @@
-<table class="table-show-user table table-hover">
-  <thead>
-  <tr>
-    <th><%= t ".category_name" %></th>
-    <th><%= t ".description" %></th>
-    <th><%= t ".left_index" %></th>
-    <th><%= t ".right_index" %></th>
-    <th><%= t ".depth" %></th>
-    <th><%= t ".edit" %></th>
-    <th><%= t ".delete" %></th>
-    <th><%= t ".add_children" %></th>
-  </tr>
-  </thead>
-  <tbody>
-    <% if @categories.any? %>
-      <%= render @categories %>
-    <% else %>
-      <div class="wrapper">
-        <%= link_to t(".add"), new_admin_category_path %>
-      </div>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="col-md-12 admin-product">
+  <h2 class="text-center"><%= t ".advanced_search" %></h2>
+  <div class="row">
+      <%= form_tag admin_categories_path, method: :get, class:
+        "form-search-product" do %>
+        <%= render "shared/search_category" %>
+      <% end %>
+  </div>
+  <h2 class="text-center"><%= t ".list_categories" %></h2>
+  <table class="table-show-user table table-hover">
+    <thead>
+    <tr class="info row">
+      <th class="col-md-2"><%= t ".category_name" %></th>
+      <th class="col-md-3">
+        <span class="product-cart-description">
+          <%= t ".description" %>
+        </span>
+      </th>
+      <th class="col-md-1"><%= t ".left_index" %></th>
+      <th class="col-md-1"><%= t ".right_index" %></th>
+      <th class="col-md-1"><%= t ".depth" %></th>
+      <th class="col-md-2"><%= t ".edit" %></th>
+      <th class="col-md-2"><%= t ".delete" %></th>
+      <th><%= t ".add_children" %></th>
+    </tr>
+    </thead>
+     <tbody>
+      <% if @categories.any? %>
+        <% @search_categories.each do |category|%>
+          <tr class="row">
+            <td class="col-md-2"><%= category.category_name %></td>
+            <td class="col-md-3"><%= category.description %></td>
+            <td class="col-md-1"><%= category.left_node %></td>
+            <td class="col-md-1"><%= category.right_node %></td>
+            <td class="col-md-1"><%= category.depth %></td>
+            <td class="col-md-2">
+              <%= link_to t(".edit"), edit_admin_category_path(category.id) %>
+            </td>
+            <td class="col-md-2">
+              <% if current_user.admin? %>
+                <%= link_to t(".delete"), [:admin, category], method: "delete",
+                  data: {confirm: t(".you_sure")} %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to t(".add"),
+                "/admin/categories/new?parent_id=#{category.id}" %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <div class="wrapper">
+          <%= link_to t(".add"), new_admin_category_path %>
+        </div>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-12 pagi">
+    <%= will_paginate @search_categories %>
+  </div>
+</div>
