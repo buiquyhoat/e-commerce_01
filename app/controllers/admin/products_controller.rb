@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
   before_action :require_admin
   before_action :load_product, except: [:new, :create, :index]
-  before_action :load_categories, only: [:new, :create]
+  before_action :load_categories, only: [:new, :create, :edit, :update]
 
   def index
     @search = Product.paginate(page: params[:page],
@@ -23,6 +23,18 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_url
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @product.update_attributes product_params
+      flash[:success] = t ".update_success"
+      redirect_to admin_products_url
+    else
+      render :edit
     end
   end
 

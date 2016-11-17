@@ -1,7 +1,7 @@
 <div class="detail-product">
   <div class="col-md-4 zoom-grid">
     <div class="flexslider">
-      <%= image_tag @product.image ? @product.image.url : Settings.image, class: "img-responsive" %>
+      <%= image_tag @product.image? ? @product.image.url : Settings.image, class: "img-responsive" %>
     </div>
   </div>
   <div class="col-md-8 dress-info">
@@ -9,7 +9,7 @@
       <h3><%= @product.product_name %></h3>
       <span><%= @product.price %>$</span>
       <div class="clearfix"></div>
-      <p><%= @product.description %></p>
+      <div><%= raw get_short_description @product %><%= t ".three_points" %></div>
     </div>
     <div class="span span1">
       <p class="left"><%= t ".fabric_origin" %></p>
