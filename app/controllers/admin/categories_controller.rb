@@ -4,6 +4,8 @@ class Admin::CategoriesController < ApplicationController
   before_action :require_admin
 
   def index
+    @search_categories = Category.search(params[:category_name])
+      .paginate(page: params[:page], per_page: Settings.categories_per_page)
     @categories = Category.all.order("left_node")
   end
 

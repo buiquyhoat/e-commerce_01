@@ -31,6 +31,13 @@ class Category < ApplicationRecord
     rebuild_left_right_index
   end
 
+  def self.search name
+    categories = Category.all
+    categories =
+      categories.where("category_name LIKE ?","%#{name}%") if name.present?
+    categories
+  end
+
   private
   def get_max_right
     Category.where("depth = ?", 1).maximum(:right_node)
