@@ -1,0 +1,11 @@
+<div id="color" class="form-group row">
+  <div class="col-md-7">
+    <%= f.label :color_name %>
+    <%= f.text_field :color_name, class: "form-control" %>
+  </div>
+  <div class="col-md-2">
+    <div class= "remove_fields btn btn-danger">
+      <%= link_to_remove_fields t(".remove"), f %>
+    </div>
+  </div>
+</div>

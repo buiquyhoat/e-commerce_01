@@ -11,3 +11,4 @@ image_trade_2: "trademark3.jpg"
 products_per_page: 8
 products_admin_per_page: 4
 users_admin_per_page: 4
+min_field: 1

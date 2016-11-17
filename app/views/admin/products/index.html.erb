@@ -6,7 +6,7 @@
     <% end %>
   <h2 class="text-center"><%= t ".list_products" %></h2>
   <div class="pull-right btn-add-product">
-    <%= link_to "", products_path, class: "fa fa-plus btn btn-default" %>
+    <%= link_to "", new_admin_product_path, class: "fa fa-plus btn btn-default" %>
   </div>
   <table class="cart table table-hover new-order">
     <thead>
@@ -44,7 +44,7 @@
             <%= get_short_description product %><%= t ".three_points" %>
           </td>
           <td class="cart-image" class="col-md-2">
-            <%= image_tag product.image ? product.image.url : Settings.image,
+            <%= image_tag product.image? ? product.image.url : Settings.image,
               class: "img-responsive" %>
           </td>
           <td class="col-md-1 price"><%= product.price %></td>

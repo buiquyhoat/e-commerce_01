@@ -42,10 +42,14 @@ div#container{
 }
 
 .sidebar{
-  min-height: 777px;
   background-color: $light_black;
   margin-right: -5%;
   margin-left: -1%;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: 2;
+  height: 700px;
 }
 
 ul#nav li{
@@ -76,7 +80,6 @@ ul#nav li a.selected{
 }
 
 .content{
-  min-height: 777px;
   background-color: white;
   padding: 15px;
 }
@@ -232,3 +235,99 @@ a.btn.btn-default.button-1 {
   transform: translateX(-86%);
   margin-bottom: 1px;
 }
+
+.remove_fields.btn.btn-danger {
+  transform: translateY(74%);
+}
+
+.remove_fields.btn.btn-danger a {
+  color: white;
+}
+
+select#product_category_id {
+  width: 100%;
+  height: 33px;
+  padding-left: 3%;
+  background: white;
+}
+
+select#product_category_id:hover {
+  border-color: lightblue;
+}
+
+.btn.btn-default.add-more-color a {
+  color: black;
+  font-weight: 400;
+}
+
+.btn.btn-default.add-more-color:hover, .btn.btn-default.add-more-color a:hover {
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.color-form {
+  background: rgba(204, 204, 204, 0.18);
+  padding: 10px;
+}
+
+.color-form h2.text-center.new-color {
+  font-size: 22px;
+  float: left;
+  margin-bottom: 6px;
+}
+
+.color-form .form-group {
+  clear: both;
+}
+
+.row.content-work {
+  padding-top: 60px;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top {
+  height: 70px;
+  background: $purple;
+  border: none;
+}
+
+nav.navbar.navbar-default.navbar-fixed-top span {
+  color: white;
+  font-size: 20px;
+  margin-left: 24px;
+}
+
+.sidebar i.fa {
+  margin-right: 9px;
+}
+
+.sidebar ul#nav li a {
+  font-size: 15px;
+}
+
+.fileinput-button {
+  position: absolute;
+  top: 10%;
+  left: 15px;
+  z-index: 2;
+  overflow: hidden;
+  float: left;
+  margin-right: 4px;
+  width: 40px;
+  height: 32px;
+  border: none;
+  background: gray;
+  border-radius: 0;
+  input{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    direction: ltr;
+    cursor: pointer;
+  }
+}
+
+img#image-product {
+  position: relative;
+}
+

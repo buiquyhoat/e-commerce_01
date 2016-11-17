@@ -6,9 +6,16 @@ class Product < ApplicationRecord
     dependent: :destroy
   has_many :order_details, class_name: OrderDetail.name, foreign_key: :product_id
   has_many :colors, class_name: Color.name, foreign_key: :product_id,
-    dependent: :destroy
+    dependent: :destroy, inverse_of: :product
   has_many :sizes, class_name: Size.name, foreign_key: :product_id,
-    dependent: :destroy
+    dependent: :destroy, inverse_of: :product
+
+  mount_uploader :image, PictureUploader
+
+  accepts_nested_attributes_for :colors, allow_destroy: true,
+    reject_if: proc{|attributes| attributes["color_name"].blank?}
+  accepts_nested_attributes_for :sizes, allow_destroy: true,
+    reject_if: proc{|attributes| attributes["size_name"].blank?}
   class << self
     def best_seller
       product_ids = "select order_details.product_id

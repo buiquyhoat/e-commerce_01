@@ -210,6 +210,18 @@ en:
       destroy:
         destroy_success: "Destroy product successfully"
         destroy_error: "Destroy error"
+      create:
+        create_success: "Product Created Successfully"
+      form:
+        compose_new_description_product: "Compose new description product..."
+        save: "Save"
+        color: "Color"
+        size: "Size"
+        add_more: "Add More"
+      color_fields:
+        remove: "Remove"
+      size_fields:
+        remove: "Remove"
     users:
       index:
         advanced_search: "Advanced Search"
