@@ -29,11 +29,11 @@
             <td class="col-md-1">
               <%= link_to product.product_name, product_path(product) %></td>
             <td class="product-des  col-md-3">
-              <%= get_short_description product %><%= t ".three_points" %>
+              <%= raw get_short_description product %><%= t ".three_points" %>
             </td>
             <td class="col-md-1 price"><%= product.price %></td>
             <td class="cart-image" class="col-md-3">
-              <%= image_tag product.image ? product.image.url : Settings.image,
+              <%= image_tag product.image? ? product.image.url : Settings.image,
                 class: "img-responsive" %>
             </td>
             <td class="col-md-2">

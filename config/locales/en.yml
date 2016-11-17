@@ -125,6 +125,7 @@ en:
       color: "COLOR"
       size: "SIZE"
       add_to_cart: "Add to cart"
+      three_points: " ... "
     description: "Description"
     price: "Price"
     image: "Image"
@@ -151,6 +152,7 @@ en:
       your_cart: "Your Cart"
       delete_confirm: "Are you sure, delete ? "
       step_two: "Step Two"
+      three_points: "..."
   orders:
     create:
       orders_create_successfully: "Order create Sucessfully"
@@ -212,6 +214,8 @@ en:
         destroy_error: "Destroy error"
       create:
         create_success: "Product Created Successfully"
+      update:
+        update_success: "Update product successfully"
       form:
         compose_new_description_product: "Compose new description product..."
         save: "Save"

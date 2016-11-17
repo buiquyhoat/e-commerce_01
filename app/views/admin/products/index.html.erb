@@ -41,7 +41,7 @@
           <td class="col-md-2">
             <%= product.product_name %></td>
           <td class="product-des  col-md-3">
-            <%= get_short_description product %><%= t ".three_points" %>
+            <%= raw get_short_description product %><%= t ".three_points" %>
           </td>
           <td class="cart-image" class="col-md-2">
             <%= image_tag product.image? ? product.image.url : Settings.image,
@@ -52,8 +52,10 @@
             <%= product.quantity %>
           </td>
           <th class="col-md-2 option-product-admin">
-            <a href="#" class="btn btn-default button-1">
+            <%= link_to edit_admin_product_path(product),
+              class: "btn btn-default button-1" do %>
               <i class="fa fa-wrench"></i>
+            <% end %>
             </a>
             <%= link_to admin_product_path(product), method: :delete,
               class: "btn btn-default", data: {confirm: t(".delete_confirm")} do %>
