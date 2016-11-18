@@ -342,5 +342,10 @@ img#image-product {
   min-width: 210px;
   height: 300px;
   max-width: 500px;
-  margin: 30px
+  margin: 30px;
+}
+
+.import-csv input.btn.btn-default.import-btn {
+  transform: translateX(92%);
+  margin-top: 2px;
 }

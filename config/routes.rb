@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'imports_file/import'
+
   root "products#index"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :orders, only: [:new, :create, :show]
   end
+
+  post "/imports_file/import", to: "imports_file#import"
 
   resources :products do
     resources :comments
