@@ -205,6 +205,8 @@ en:
         delete: "Delete"
         add_children: "Add children"
         add: "Add"
+        list_categories: "List Category"
+        advanced_search: "Search"
       create:
         add_category_successful: "Add child successful!"
       update:

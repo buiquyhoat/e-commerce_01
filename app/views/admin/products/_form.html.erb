@@ -12,7 +12,7 @@
     <div class="col-md-8">
       <div class="form-group">
         <%= f.label :product_name %>
-        <%= f.text_field :product_name, class: "form-control" %>
+        <%= f.text_field :product_name, class: "form-control", required: "true" %>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -27,7 +27,7 @@
           <div class="form-group">
             <%= f.label :price %>
             <%= f.number_field :price, min: Settings.min_field,
-              class: "form-control" %>
+              class: "form-control", required: "true" %>
           </div>
         </div>
       </div>
@@ -36,14 +36,14 @@
           <div class="form-group">
             <%= f.label :rating %>
             <%= f.number_field :rating, min: Settings.min_field,
-              class: "form-control" %>
+              class: "form-control", required: "true" %>
            </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <%= f.label :quantity %>
             <%= f.number_field :quantity, min: Settings.min_field,
-              class: "form-control" %>
+              class: "form-control", required: "true" %>
           </div>
         </div>
       </div>
