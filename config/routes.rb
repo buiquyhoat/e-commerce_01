@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "home#index"
     resources :categories, :products, :users, :colors
+    resources :statistic, :statistic_pie
   end
 
   resources :users do

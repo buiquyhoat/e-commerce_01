@@ -231,6 +231,7 @@ a.btn.btn-default.button-1 {
   background: $dark-blue;
   color: white;
 }
+
 .pull-right.btn-add-product {
   transform: translateX(-86%);
   margin-bottom: 1px;
@@ -331,3 +332,15 @@ img#image-product {
   position: relative;
 }
 
+.chart {
+  min-width: 310px;
+  height: 400px;
+  margin: 0 auto
+}
+
+.chart-pie {
+  min-width: 210px;
+  height: 300px;
+  max-width: 500px;
+  margin: 30px
+}
