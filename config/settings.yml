@@ -12,3 +12,6 @@ products_per_page: 8
 products_admin_per_page: 4
 users_admin_per_page: 4
 min_field: 1
+number_one: 1
+number_seven: 7
+format_date: "%Y-%m-%d"

@@ -18,6 +18,10 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.password_min},
     allow_nil: true
 
+  scope :customer_count, -> date_time do
+    where("date(created_at) <= '#{date_time}'").count
+  end
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST

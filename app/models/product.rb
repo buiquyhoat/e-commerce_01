@@ -9,13 +9,12 @@ class Product < ApplicationRecord
     dependent: :destroy, inverse_of: :product
   has_many :sizes, class_name: Size.name, foreign_key: :product_id,
     dependent: :destroy, inverse_of: :product
-
   mount_uploader :image, PictureUploader
-
   accepts_nested_attributes_for :colors, allow_destroy: true,
     reject_if: proc{|attributes| attributes["color_name"].blank?}
   accepts_nested_attributes_for :sizes, allow_destroy: true,
     reject_if: proc{|attributes| attributes["size_name"].blank?}
+
   class << self
     def best_seller
       product_ids = "select order_details.product_id
@@ -53,6 +52,15 @@ class Product < ApplicationRecord
       products = products.where(
         "quantity <= ?", max_quantity.to_i) if max_quantity.present?
       products
+    end
+
+    def hot_trends
+      hot_trends_array = []
+      best_seller.each do |product|
+        hot_trends_array << {name: product.product_name,
+          y: product.quantity * 1.0 / best_seller.sum(:quantity)}
+      end
+      hot_trends_array
     end
   end
 end

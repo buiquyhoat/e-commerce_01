@@ -257,3 +257,20 @@ en:
       destroy:
         destroy_success: "Destroy user successfully"
         destroy_error: "Destroy error"
+    statistic:
+      index:
+        order_count: "Order count"
+        customer_account: "Customer account"
+        spline: "spline"
+        column: "column"
+    statistic_pie:
+      index:
+        brands: "Brands"
+  value_order: "{value} orders"
+  weekly_statistics: "Weekly Statistics"
+  total_order: "Total order"
+  value_mems: "{value} mems"
+  customer_accounts: "Customer accounts"
+  vertical: "vertical"
+  right: "right"
+  middle: "middle"

@@ -1,6 +1,5 @@
 class Category < ApplicationRecord
   has_many :products, class_name: Product.name, foreign_key: :category_id
-  after_destroy :rebuild_left_right_index
 
   def set_category parent_id
     max_right = get_max_right
