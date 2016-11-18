@@ -1,0 +1,21 @@
+<li class="item-comment">
+  <div class="row">
+    <div class="avatar col-md-3">
+      <%= image_tag Settings.image, class: "img-responsive" %>
+    </div>
+    <div class="col-md-9 right-comment">
+      <div class="row">
+        <div class="info col-md-7">
+          <%= link_to comment.user.name, comment.user %>(<%= comment.user.email %>)
+          <div class="comment-body">
+            <%= comment.content %>
+          </div>
+        </div>
+        <span class="time col-md-5">
+          <%= t ".comment_at" %><%= time_ago_in_words(comment.created_at) %>
+          <%= t ".ago" %>
+        </span>
+      </div>
+    </div>
+  </div>
+</li>

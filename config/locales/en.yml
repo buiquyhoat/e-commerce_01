@@ -1,4 +1,14 @@
 en:
+  footer:
+    designby: "@ 2016 by Bui Quy Hoat & Tran Van Tuan."
+    twitter: "twitter"
+    facebook: "facebook"
+    googleplus: "googleplus"
+    pinterest: "pinterest"
+  comments:
+    comment:
+      comment_at: "Commented at "
+      ago: " ago."
   shared:
     search_product:
       min: "Min"
@@ -71,9 +81,6 @@ en:
       settings: "Settings"
       log_out: "Log out"
       suggest: "Suggest"
-    footer:
-      f_shop: "F-Shop"
-      author: "Bui Quy Hoat & Tran Van Tuan"
     admin:
       categories: "Categories"
       admin: "Admin"
@@ -126,6 +133,14 @@ en:
       size: "SIZE"
       add_to_cart: "Add to cart"
       three_points: " ... "
+      full_description: "Full Description"
+      comment: "Comment"
+      please_click: "Please click"
+      here: "here"
+      to_login: " to login"
+      write_your_comment: "Write your comment"
+      compose_new_comment: "Compose new comment ... "
+      submit: "Post"
     description: "Description"
     price: "Price"
     image: "Image"
