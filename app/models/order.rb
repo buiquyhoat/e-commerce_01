@@ -5,5 +5,9 @@ class Order < ApplicationRecord
 
   validates :shipping_address, :shipping_name, :shipping_email, presence: :true
 
-  scope :orders_history, -> user {where user_id: user.id}
+  class << self
+    def orders_history user
+      where(user_id: user.id).order(created_at: :desc)
+    end
+  end
 end

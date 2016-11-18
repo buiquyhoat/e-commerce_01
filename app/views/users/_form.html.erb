@@ -16,11 +16,12 @@
   <%= f.text_field :address, class: "form-control" %>
 
   <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control",
+  <%= f.password_field :password, class: "form-control", required: "true"
     minlength: Settings.password_min %>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
+  <%= f.password_field :password_confirmation, class: "form-control",
+    required: "true" %>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: "btn btn-default" %>
 <% end %>

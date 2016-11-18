@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @orders_history = Order.orders_history(@user)
+    @orders_history = Order.orders_history @user
   end
 
   private
