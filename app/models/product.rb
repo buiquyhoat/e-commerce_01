@@ -62,5 +62,28 @@ class Product < ApplicationRecord
       end
       hot_trends_array
     end
+
+    def import file
+      CSV.foreach(file.path, headers: true, col_sep: "\t", header_converters: :symbol) do |row|
+        row = row.to_hash
+        colors_attributes = []
+        row[:colors].split(",").each do |color|
+          color_hash = Hash.new
+          color_hash[:color_name] = color
+          colors_attributes.push color_hash
+        end
+        sizes_attributes = []
+        row[:sizes].split(",").each do |size|
+          size_hash = Hash.new
+          size_hash[:size_name] = size
+          sizes_attributes.push size_hash
+        end
+        row[:colors_attributes] = colors_attributes
+        row[:sizes_attributes] = sizes_attributes
+        row.delete :colors
+        row.delete :sizes
+        Product.create! row
+      end
+    end
   end
 end

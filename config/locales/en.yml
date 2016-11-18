@@ -226,6 +226,8 @@ en:
         three_points: "..."
         index: "#"
         delete_confirm: "Are you sure ? "
+        import: "Import"
+        import_csv: "Import CSV"
       destroy:
         destroy_success: "Destroy product successfully"
         destroy_error: "Destroy error"

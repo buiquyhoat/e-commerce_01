@@ -67,6 +67,18 @@
     </tbody>
   </table>
   <div class="col-md-12 pagi">
-    <%= will_paginate @search %>
+    <div class="col-md-6">
+      <%= will_paginate @search %>
+    </div>
+    <div class="col-md-2 col-md-offset-4 import-csv">
+      <%= form_tag imports_file_import_path, multipart: true do %>
+        <div class="btn btn-success fileinput-button csv">
+          <i class="fa fa-pencil"></i>
+          <%= file_field_tag :file %>
+        </div>
+        <%= submit_tag t(".import"), class: "btn btn-default import-btn" %>
+      <% end %>
+    </div>
   </div>
+
 </div>
