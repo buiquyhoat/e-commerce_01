@@ -1,0 +1,46 @@
+<div id="my_carousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#my_carousel" data-slide-to="1"></li>
+    <li data-target="#my_carousel" data-slide-to="2"></li>
+    <li data-target="#my_carousel" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag "b1.jpg", class: "img-responsive" %>
+    </div>
+    <div class="item">
+      <%= image_tag "b2.jpg", class: "img-responsive" %>
+    </div>
+    <div class="item">
+      <%= image_tag "b3.jpg", class: "img-responsive" %>
+    </div>
+    <div class="item">
+      <%= image_tag "b4.jpg", class: "img-responsive" %>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#my_carousel" role="button"
+    data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only"><%= t ".previous" %></span>
+  </a>
+  <a class="right carousel-control" href="#my_carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only"><%= t ".next" %></span>
+  </a>
+</div>
+<div class="container">
+  <h2 class="text-center"><%= t ".list_products" %></h2>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @products.present? %>
+        <%= render @products %>
+      <% else %>
+        <h2 class="coming"><%= t ".coming_soon" %></h2>
+      <% end %>
+    </div>
+    <div class="col-md-12 pagi">
+      <%= will_paginate @products %>
+    </div>
+  </div>
+</div>

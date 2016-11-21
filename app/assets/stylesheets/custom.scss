@@ -746,7 +746,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 }
 
 div#full_description {
-  color: $gray_footer;
+  color: $gray_gray_weight;
 }
 
 li.dropdown.navc.open .dropdown-toggle {
@@ -756,4 +756,13 @@ li.dropdown.navc.open .dropdown-toggle {
 
 .sanpham .description.text-center {
   word-wrap: break-word;
+}
+
+#comment>.form-group {
+  margin-top: 15px;
+}
+
+h2.coming {
+  font-size: 16px;
+  font-weight: 400;
 }

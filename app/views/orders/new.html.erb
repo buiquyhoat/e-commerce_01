@@ -63,18 +63,19 @@
         <%= form_for [@user, @order] do |f| %>
           <h4><%= t ".shipping_address" %></h4>
           <%= f.text_field :shipping_address, value: current_user.address,
-            class: "form-control", require: true %>
+            class: "form-control", required: true %>
 
           <h4><%= t ".shipping_name" %></h4>
           <%= f.text_field :shipping_name, value: current_user.name,
-            class: "form-control", require: true %>
+            class: "form-control", required: true %>
 
           <h4><%= t ".shipping_email" %></h4>
           <%= f.email_field :shipping_email, value: current_user.email,
-            class: "form-control", require: true %>
+            class: "form-control", required: true %>
 
           <h4><%= t ".message" %></h4>
-          <%= f.text_area :message, class: "form-control", rows: Settings.rows %>
+          <%= f.text_area :message, class: "form-control", rows: Settings.rows,
+            placeholder: t(".order_message") %>
 
           <%= f.submit t(".order_now"), class: "btn btn-default" %>
         <% end %>

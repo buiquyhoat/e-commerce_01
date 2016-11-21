@@ -39,7 +39,11 @@
           <li class="navc"><%= link_to t(".login"), login_path %></li>
         <% end %>
         <li class="navc"><%= link_to t(".signup"), signup_path %></li>
-        <li class="navc"><a href="/cart" class="fa fa-cart-arrow-down"></a></li>
+        <li class="navc">
+          <a href="/cart" class="fa fa-cart-arrow-down">
+            (<%= session[:cart].present? ? session[:cart].size : 0 %>)
+          </a>
+        </li>
       </ul>
     </div>
   </div>

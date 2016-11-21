@@ -24,4 +24,12 @@ class ApplicationController < ActionController::Base
   def verify_admin
     redirect_to root_url unless current_user.admin?
   end
+
+  def load_category
+    @category = Category.find_by id: params[:id]
+    unless @category
+      flash.now[:warning] = t "category.not_found"
+      render_404
+    end
+  end
 end

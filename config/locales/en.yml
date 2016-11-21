@@ -90,6 +90,10 @@ en:
       suggestions: "Suggestions"
       users_cat: "Users"
       products_cat: "Products"
+  categories:
+    show:
+      list_products: "List Product"
+      coming_soon: "Coming Soon"
   static_pages:
     contact:
       mail_us: "Mail us"
@@ -119,6 +123,7 @@ en:
       dola: "$"
       view_more: "View more"
       add_to_cart: "Add to cart"
+      no_information: "No Information"
     index:
       new_products: "New Product"
       best_seller_products: "Best Seller Product"
@@ -174,12 +179,13 @@ en:
       orders_create_failed: "Order create Failed"
     new:
       total_amout: "Total Amout: "
-      shipping_address: "Shipping Address"
-      shipping_name: "Shipping Name"
-      shipping_email: "Shipping Email"
+      shipping_address: "Receiver Address"
+      shipping_name: "Receiver Name"
+      shipping_email: "Receiver Email"
       order_now: "Order Now"
       your_order: "Your Order"
       three_points: "..."
+      order_message: "Please fill your message, include: phone number, your request ..."
   api:
     orders:
       order_details:
@@ -207,6 +213,7 @@ en:
         add: "Add"
         list_categories: "List Category"
         advanced_search: "Search"
+        you_sure: "Are you sure ? "
       create:
         add_category_successful: "Add child successful!"
       update:
@@ -219,6 +226,10 @@ en:
         you_sure: "Are you sure to delete this?"
       destroy:
         category_deleted: "Category was deleted!"
+      form:
+        compose_description: "Compose category description ... "
+      new_category:
+        compose_description: "Compose category description ... "
     products:
       index:
         advanced_search: "Advanced Search"

@@ -33,5 +33,7 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+  resources :categories
+
   get "/:page", to: "static_pages#show"
 end
