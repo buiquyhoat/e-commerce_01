@@ -17,7 +17,12 @@
           <%= link_to t(".suggest"), new_suggest_product_path %>
         </li>
         <li class="navc"><%= link_to t(".help"), "/help" %></li>
-        <li class="navc"><%= link_to t(".about"), "/about" %></li>
+        <li class="dropdown navc product-cate">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <%= t ".product" %><b class="caret"></b>
+          </a>
+          <%= raw load_categories_menu %>
+        </li>
         <li class="navc"><%= link_to t(".contact"), "/contact" %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -46,5 +51,8 @@
         </li>
       </ul>
     </div>
+  </div>
+  <div class="container">
+    <%= raw load_categories_menu %>
   </div>
 </nav>

@@ -29,4 +29,10 @@ $(document).on('turbolinks:load', function() {
       $('.recent-view-product').addClass('turn-out');
     }
   });
+  $('li.dropdown.custom-nav').hover(function(){
+    $(this).addClass('open');
+  });
+  $('li.dropdown.custom-nav').mouseleave(function(){
+    $(this).removeClass('open');
+  });
 });

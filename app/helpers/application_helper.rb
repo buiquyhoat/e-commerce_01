@@ -33,4 +33,33 @@ module ApplicationHelper
     href = html_options[:href] || "#"
     content_tag(:a, name, html_options.merge(href: href, onclick: onclick))
   end
+
+  def load_categories_menu
+    @tree_menu = ""
+    tree Category.all
+  end
+
+  private
+  def tree categories, left = 0, right = nil, depth = 0
+    @tree_menu += "<ul class='dropdown-menu'>" if left == 0 && right == nil && depth == 0
+    categories.each do |category|
+      if category.left_node > left && (right.nil? || category.right_node <
+        right) && category.depth == depth + 1
+        categories_temp = categories.compact
+        categories_temp.delete category
+        @tree_menu +=
+          "<li class='dropdown custom-nav'>
+          <a href='/categories/#{category.id}'>#{category.category_name}</a>"
+        if category.right_node != (category.left_node + 1)
+          @tree_menu += "<ul class='dropdown-menu' >"
+          tree categories_temp, category.left_node, category.right_node,
+            category.depth
+          @tree_menu += "</ul>"
+        end
+        @tree_menu += "</li>"
+      end
+    end
+    @tree_menu += "</ul>" if left == 0 && right.nil? && depth == 0
+    @tree_menu
+  end
 end
