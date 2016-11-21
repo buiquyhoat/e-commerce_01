@@ -81,6 +81,7 @@ en:
       settings: "Settings"
       log_out: "Log out"
       suggest: "Suggest"
+      product: "Product"
     admin:
       categories: "Categories"
       admin: "Admin"

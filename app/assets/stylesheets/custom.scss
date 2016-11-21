@@ -766,3 +766,21 @@ h2.coming {
   font-size: 16px;
   font-weight: 400;
 }
+
+li.dropdown.custom-nav > ul {
+  transform: translateX(95%);
+  margin-top: -51px;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: 0 0 0 transparent;
+}
+
+li.dropdown.navc.product-cate ul li {
+  border-bottom: solid 1px $gray_footer;
+  padding: 10px;
+}
+
+li.dropdown.navc.product-cate ul li:last-child {
+  border: none;
+}
