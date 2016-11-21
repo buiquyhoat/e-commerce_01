@@ -56,9 +56,12 @@ class Product < ApplicationRecord
 
     def hot_trends
       hot_trends_array = []
+      hot_trend_ids = best_seller.map(&:id).join(",")
+      order_quantity = OrderDetail.where("product_id IN (#{hot_trend_ids})").sum(:quantity)
+
       best_seller.each do |product|
         hot_trends_array << {name: product.product_name,
-          y: product.quantity * 1.0 / best_seller.sum(:quantity)}
+          y: OrderDetail.where(product_id: product.id).sum(:quantity) * 1.0 / order_quantity}
       end
       hot_trends_array
     end
