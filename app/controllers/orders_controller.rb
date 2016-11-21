@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
           product_name: @product_in_order.product_name
         @order_detail.save
       end
+      OrderMailer.mail_confirm(@order).deliver_now
       @session_cart.clear
       flash[:success] = t ".orders_create_successfully"
     else
