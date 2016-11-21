@@ -2,13 +2,13 @@
   <%= render "shared/error_messages", object: f.object %>
   <div class="form-group">
     <%= f.label :category_name %>
-    <%= f.text_field :category_name, class: "form-control" %>
+    <%= f.text_field :category_name, class: "form-control", required: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_field :description, class: "form-control",
-      maxlength: Settings.category_description %>
+    <%= f.text_area :description, placeholder:
+      t(".compose_description"), class: "form-control", rows: Settings.rows%>
   </div>
 
   <%= f.submit yield(:button_text), class: "btn btn-default" %>

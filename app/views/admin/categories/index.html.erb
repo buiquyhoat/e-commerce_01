@@ -1,4 +1,4 @@
-<div class="col-md-12 admin-product">
+<div class="col-md-12 admin-categories">
   <h2 class="text-center"><%= t ".advanced_search" %></h2>
   <div class="row">
       <%= form_tag admin_categories_path, method: :get, class:
@@ -14,9 +14,9 @@
       <th class="col-md-2"><%= t ".left_index" %></th>
       <th class="col-md-2"><%= t ".right_index" %></th>
       <th class="col-md-2"><%= t ".depth" %></th>
-      <th class="col-md-2"><%= t ".edit" %></th>
-      <th class="col-md-2"><%= t ".delete" %></th>
-      <th><%= t ".add_children" %></th>
+      <th class="col-md-1"></th>
+      <th class="col-md-1"></th>
+      <th class="col-md-2"></th>
     </tr>
     </thead>
      <tbody>
@@ -28,23 +28,30 @@
             <td class="col-md-2"><%= category.right_node %></td>
             <td class="col-md-2"><%= category.depth %></td>
             <td class="col-md-2">
-              <%= link_to t(".edit"), edit_admin_category_path(category.id) %>
+              <%= link_to edit_admin_category_path(category.id) do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
             </td>
             <td class="col-md-2">
               <% if current_user.admin? %>
-                <%= link_to t(".delete"), [:admin, category], method: "delete",
-                  data: {confirm: t(".you_sure")} %>
+                <%= link_to [:admin, category], method: "delete",
+                  data: {confirm: t(".you_sure")} do %>
+                  <i class="fa fa-trash-o"></i>
+                <% end %>
               <% end %>
             </td>
             <td>
-              <%= link_to t(".add"),
-                "/admin/categories/new?parent_id=#{category.id}" %>
+              <%= link_to "/admin/categories/new?parent_id=#{category.id}" do %>
+                <i class="fa fa-plus"></i>
+              <% end %>
             </td>
           </tr>
         <% end %>
       <% else %>
         <div class="wrapper">
-          <%= link_to t(".add"), new_admin_category_path %>
+          <%= link_to new_admin_category_path do %>
+            <i class="fa fa-plus"></i>
+          <% end %>
         </div>
       <% end %>
     </tbody>

@@ -10,7 +10,7 @@ class CartController < ApplicationController
     session[:cart] = {} unless session[:cart]
     cart = session[:cart]
     cart[id] = cart[id] ? (cart[id].to_i + 1) : 1
-    redirect_to cart_index_path
+    redirect_to products_path
   end
 
   def update
