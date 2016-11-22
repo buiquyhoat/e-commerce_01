@@ -353,3 +353,16 @@ img#image-product {
 .col-md-12.admin-categories a {
   color: black;
 }
+
+select#order_status {
+  padding: 5px 10px;
+  background: white;
+  transform: translateX(23px);
+  font-size: 13px;
+  margin-top: 50px;
+  margin-bottom: 9px;
+}
+
+input.btn.btn-default.change-status {
+  transform: translateX(-14px);
+}

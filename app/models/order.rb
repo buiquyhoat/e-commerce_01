@@ -13,5 +13,13 @@ class Order < ApplicationRecord
     def orders_history user
       where(user_id: user.id).order(created_at: :desc)
     end
+
+    def search name
+      if name.present?
+        orders = Order.where("shipping_name LIKE ?","%#{name}%")
+      else
+        orders = Order.all
+      end
+    end
   end
 end

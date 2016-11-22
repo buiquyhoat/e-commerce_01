@@ -50,5 +50,6 @@ class Admin::CategoriesController < ApplicationController
 
   def load_category
     @category = Category.find_by id: params[:id]
+    render_404 unless @order
   end
 end

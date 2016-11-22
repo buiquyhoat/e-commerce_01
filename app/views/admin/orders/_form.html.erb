@@ -1,0 +1,17 @@
+<%= form_for [:admin, @order] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status,
+      options_for_select([[t(".uncheck"), 0],[t(".check"), 1]]),
+      class: "form-control change-status" %>
+  </div>
+   <div class="col-md-12">
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+          <%= f.submit t(".save"),
+            class: "btn btn-default change-status" %>
+        </div>
+      </div>
+    </div>
+<% end %>
