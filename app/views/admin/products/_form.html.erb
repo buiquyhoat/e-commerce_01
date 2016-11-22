@@ -15,6 +15,15 @@
         <%= f.text_field :product_name, class: "form-control", required: "true" %>
       </div>
       <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity, min: Settings.min_field,
+              class: "form-control", required: "true" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-6">
           <div class="form-group">
             <%= f.label :category %></br>
@@ -27,22 +36,6 @@
           <div class="form-group">
             <%= f.label :price %>
             <%= f.number_field :price, min: Settings.min_field,
-              class: "form-control", required: "true" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <%= f.label :rating %>
-            <%= f.number_field :rating, min: Settings.min_field,
-              class: "form-control", required: "true" %>
-           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <%= f.label :quantity %>
-            <%= f.number_field :quantity, min: Settings.min_field,
               class: "form-control", required: "true" %>
           </div>
         </div>

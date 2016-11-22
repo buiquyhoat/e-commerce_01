@@ -47,6 +47,9 @@
             <% end %>
           <% end %>
         <% else %>
+          <% (Settings.number_star).times do |n| %>
+            <%= image_tag(Settings.star_off, class: "star-review1") %>
+          <% end %>
         <% end %>
       </p>
       <div class="clearfix"></div>
