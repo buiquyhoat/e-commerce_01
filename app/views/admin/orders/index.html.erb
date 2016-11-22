@@ -1,0 +1,43 @@
+<div class="col-md-12 admin-product">
+  <h2 class="text-center"><%= t ".advanced_search" %></h2>
+    <%= form_tag admin_orders_path, method: :get, class:
+      "form-search-product" do %>
+      <%= render "shared/search_order" %>
+    <% end %>
+  <h2 class="text-center"><%= t ".list_orders" %></h2>
+  <table class="table-show-user table table-hover">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-1"><%= t ".status" %></th>
+        <th class="col-md-2"><%= t ".total_amount" %></th>
+        <th class="col-md-2"><%= t ".shipping_name" %></th>
+        <th class="col-md-2"><%= t ".shipping_email" %></th>
+        <th class="col-md-2"><%= t ".shipping_address" %></th>
+        <th class="col-md-2"><%= t ".user_id" %></th>
+        <th class="col-md-1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @orders.any? %>
+        <% @search_orders.each do |order|%>
+          <tr class="row">
+            <td class="col-md-1"><%= order.status %></td>
+            <td class="col-md-2"><%= order.total_amount %></td>
+            <td class="col-md-2"><%= order.shipping_name %></td>
+            <td class="col-md-2"><%= order.shipping_email %></td>
+            <td class="col-md-2"><%= order.shipping_address %></td>
+            <td class="col-md-2"><%= order.user_id %></td>
+            <th class="col-md-1 option-product-admin">
+            <%= link_to  edit_admin_order_path(order),
+              class: "btn btn-default button-1" do %>
+              <i class="fa fa-wrench"></i>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="col-md-12 pagi">
+    <%= will_paginate @search_orders %>
+  </div>
+</div>

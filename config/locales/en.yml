@@ -27,6 +27,8 @@ en:
       address: "Address"
     search_category:
       enter_name_category: "Enter name category"
+    search_order:
+      enter_name_custommer: "Enter customer name"
   activerecord:
     model:
       category: "Category"
@@ -282,6 +284,20 @@ en:
     statistic_pie:
       index:
         brands: "Brands"
+    orders:
+      update:
+        order_updated: "Order status updated!"
+      index:
+        advanced_search: "Advanced Search"
+        status: "Status"
+        total_amount: "Total Amount"
+        shipping_name: "Shipping Name"
+        shipping_email: "Shipping Email"
+        shipping_address: "Shipping Address"
+        user_id: "User ID"
+        list_orders: "List orders"
+      form:
+        save: "Save"
   value_order: "{value} orders"
   weekly_statistics: "Weekly Statistics"
   total_order: "Total order"
