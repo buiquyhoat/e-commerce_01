@@ -14,4 +14,12 @@ users_admin_per_page: 4
 min_field: 1
 number_one: 1
 number_seven: 7
+number_star: 5
 format_date: "%Y-%m-%d"
+reivews: ["bad", "poor", "regular", "good", "gorgeous"]
+star_on: "/assets/star-on.png"
+star_off: "/assets/star-off.png"
+star_half: "/assets/star-half.png"
+rate_average: 2
+products:
+  size_star_details: "20x20"

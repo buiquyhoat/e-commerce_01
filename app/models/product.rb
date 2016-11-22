@@ -15,6 +15,10 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :sizes, allow_destroy: true,
     reject_if: proc{|attributes| attributes["size_name"].blank?}
 
+  def rate_average
+    comments.average(:rating).to_f if comments.any?
+  end
+
   class << self
     def best_seller
       product_ids = "select order_details.product_id

@@ -1,2 +1,5 @@
 $('#comments').prepend('<%= escape_javascript(render @comment) %>');
+$('#star_rewview_product').html('');
+$('#star_rewview_product').append('<%= escape_javascript(render "rate_update")%>')
 $('#comment_content').val('');
+

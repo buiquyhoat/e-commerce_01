@@ -39,6 +39,10 @@ module ApplicationHelper
     tree Category.all
   end
 
+  def round_average x
+    (x * 2).round / 2.0
+  end
+
   private
   def tree categories, left = 0, right = nil, depth = 0
     @tree_menu += "<ul class='dropdown-menu'>" if left == 0 && right == nil && depth == 0
