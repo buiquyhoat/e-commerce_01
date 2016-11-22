@@ -23,6 +23,34 @@
       <p class="right"><%= t ".vietnam" %></p>
       <div class="clearfix"></div>
     </div>
+    <div class="span span1 star">
+      <% rate_average = @product.rate_average %>
+      <p class="left"><%= t ".Star" %></p>
+      <p class="right" id="star_rewview_product">
+        <% if rate_average.present? %>
+          <% rate_round = round_average(rate_average) %>
+          <% if rate_round == rate_round.to_i %>
+            <% rate_round.to_i.times do |n| %>
+              <%= image_tag(Settings.star_on, class: "star-review1") %>
+            <% end %>
+            <% (Settings.number_star - rate_round.to_i).times do |n| %>
+              <%= image_tag(Settings.star_off, title: Settings.reivews[n],
+              class: "star-review1") %>
+            <% end %>
+          <% else %>
+            <% rate_round.to_i.times do |n| %>
+              <%= image_tag(Settings.star_on, class: "star-review1") %>
+            <% end %>
+            <%= image_tag(Settings.star_half, class: "star-review1") %>
+            <% (Settings.number_star - rate_round.to_i - 1).times do |n| %>
+              <%= image_tag(Settings.star_off, class: "star-review1") %>
+            <% end %>
+          <% end %>
+        <% else %>
+        <% end %>
+      </p>
+      <div class="clearfix"></div>
+    </div>
     <div class="span span3">
       <p class="left"><%= t ".color" %></p>
       <p class="right">
@@ -51,27 +79,31 @@
     </div>
     <ul class="nav nav-tabs">
       <li class="active">
-        <a data-toggle="tab" href="#full_description"><%= t ".full_description" %></a>
+        <a data-toggle="tab" href="#comment"><%= t ".comment" %></a>
       </li>
       <li>
-        <a data-toggle="tab" href="#comment"><%= t ".comment" %></a>
+        <a data-toggle="tab" href="#full_description"><%= t ".full_description" %></a>
       </li>
     </ul>
     <div class="tab-content">
-      <div id="full_description" class="tab-pane fade in active">
-        <%= raw @product.description %>
-      </div>
-      <div id="comment" class="tab-pane fade">
+      <div id="comment" class="tab-pane fade in active">
         <% if logged_in? %>
           <span class="header-comment">
             <%= t ".write_your_comment" %>
           </span>
           <div class="form-group">
             <%= form_for [@product, @product.comments.new], remote: true do  |f| %>
+              <%= f.label :rating %>
+              <% Settings.number_star.times do |n| %>
+                <%= image_tag(Settings.star_off, title: Settings.reivews[n],
+                  alt: "#{n+1}", class: "star-review") %>
+              <% end %>
+              <%= f.hidden_field :rating %>
               <%= f.text_area :content, class: "form-control",
                 placeholder: t(".compose_new_comment"), class: "form-control",
-                rows: Settings.rows %>
-              <%= f.submit t(".submit"), class: "btn btn-default btn_comment" %>
+                rows: Settings.rows, required: true %>
+              <%= f.submit t(".submit"), class: "btn btn-default btn_comment",
+                id: "comment-btn" %>
             <% end %>
           </div>
         <% else %>
@@ -84,6 +116,9 @@
             <%= render @comments %>
           </ul>
         </div>
+      </div>
+      <div id="full_description" class="tab-pane fade">
+        <%= raw @product.description %>
       </div>
     </div>
   </div>

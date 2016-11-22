@@ -1,0 +1,18 @@
+<% rate_round = round_average(@comment.product.rate_average) %>
+  <% if rate_round == rate_round.to_i %>
+    <% rate_round.to_i.times do |n| %>
+      <%= image_tag(Settings.star_on, class: "star-review1") %>
+    <% end %>
+    <% (Settings.number_star - rate_round.to_i).times do |n| %>
+      <%= image_tag(Settings.star_off, title: Settings.reivews[n],
+      class: "star-review1") %>
+    <% end %>
+  <% else %>
+    <% rate_round.to_i.times do |n| %>
+      <%= image_tag(Settings.star_on, class: "star-review1") %>
+    <% end %>
+    <%= image_tag(Settings.star_half, class: "star-review1") %>
+    <% (Settings.number_star - rate_round.to_i - 1).times do |n| %>
+      <%= image_tag(Settings.star_off, class: "star-review1") %>
+    <% end %>
+<% end %>
